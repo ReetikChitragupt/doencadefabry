@@ -1,0 +1,262 @@
+{# Fabry Theme page template with header + hero slider placeholders #}
+<!doctype html>
+<html{{html_attributes}}>
+	<head>
+		<head-placeholder token="{{ head_placeholder_token }}"/>
+		<title>{{ head_title }}</title>
+		<css-placeholder token="{{ css_placeholder_token }}"/>
+		<js-placeholder token="{{ js_placeholder_token }}"/>
+		<script src="slider.js"></script>
+	</head>
+	<body{{attributes}}>
+		<a href="#main-content" class="visually-hidden focusable skip-link">{{ 'Skip to main content'|t }}</a>
+
+
+		<div class="top-subheader">
+			<p>ACCESS OUR
+				<span>EXCLUSIVE PLATFORM</span>
+				FOR HEALTH PROFESSIONALS</p>
+		</div>
+		<header class="header-wrap" role="banner">
+			<div
+				class="header-inner">
+				<!-- Logo -->
+				<div class="header-logo">
+					<a href="{{ path('<front>') }}" rel="home" aria-label="Home">
+						<img src="{{ directory }}/images/logo-fabry.webp" alt="Fabry"/>
+					</a>
+				</div>
+
+				<!-- Hamburger -->
+				<div class="menu-toggle" aria-label="Toggle menu">&#9776;</div>
+				<!-- Navigation -->
+				<nav class="primary-nav" role="navigation" aria-label="{{ 'Primary menu'|t }}">
+					<ul class="nav-menu">
+						<li class="has-dropdown">
+							<a href="#">{{ 'Fabry Disease'|t }}</a>
+							<ul class="dropdown">
+								<li>
+									<a href="#">{{ 'Understanding Fabry Disease'|t }}</a>
+								</li>
+								<li>
+									<a href="#">{{ 'Why Investigate the Family'|t }}</a>
+								</li>
+								<li>
+									<a href="#">{{ 'Prevalence of Fabry Disease'|t }}</a>
+								</li>
+								<li>
+									<a href="#">{{ 'Symptom Matcher'|t }}</a>
+								</li>
+							</ul>
+						</li>
+						<li class="has-dropdown">
+							<a href="#">{{ 'Signs and Symptoms'|t }}</a>
+							<ul class="dropdown">
+								<li>
+									<a href="#">{{ 'Manifestations of Fabry Disease'|t }}</a>
+								</li>
+								<li>
+									<a href="#">{{ 'Organs'|t }}</a>
+								</li>
+								<li>
+									<a href="#">{{ 'The importance of knowing your symptoms'|t }}</a>
+								</li>
+								<li>
+									<a href="#">{{ 'Symptom Matcher'|t }}</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">{{ 'Diagnosis'|t }}</a>
+						</li>
+						<li>
+							<a href="#">{{ 'Treatment'|t }}</a>
+						</li>
+						<li class="has-dropdown">
+							<a href="#">{{ 'Information'|t }}</a>
+							<ul class="dropdown">
+								<li>
+									<a href="#">{{ 'Reference Center'|t }}</a>
+								</li>
+								<li>
+									<a href="#">{{ 'Support Material'|t }}</a>
+								</li>
+							</ul>
+						</li>
+           
+					</ul>
+				</nav>
+
+				<!-- Digital Magazine (custom button) -->
+				<div class="nav-extra">
+					<a href="#" class="digital-magazine">
+						<span class="title">DIGITAL MAGAZINE</span>
+						<span class="subtitle"><img src="{{ directory }}/images/magazine.png" alt="Heart"/>
+						</span>
+					</a>
+				</div>
+
+			</div>
+			<!-- Mobile Sidebar -->
+			<nav class="mobile-nav" id="mobileNav">
+				<div class="mobile-nav-header">
+					<img src="{{ directory }}/images/logo-fabry.webp" alt="Fabry Logo" class="mobile-logo">
+					<button class="close-btn" aria-label="Close menu" style="font-weight:900">✕</button>
+				</div>
+				<ul>
+					<li class="has-dropdown">
+						<a href="#">Fabry Disease &#x25BC;</a>
+						<ul class="dropdown">
+							<li>
+								<a href="#">Understanding Fabry Disease</a>
+							</li>
+							<li>
+								<a href="#">Why Investigate the Family</a>
+							</li>
+							<li>
+								<a href="#">Prevalence of Fabry Disease</a>
+							</li>
+							<li>
+								<a href="#">Symptom Matcher</a>
+							</li>
+						</ul>
+					</li>
+					<li class="has-dropdown">
+						<a href="#">Signs and Symptoms &#x25BC;</a>
+						<ul class="dropdown">
+							<li>
+								<a href="#">Manifestations</a>
+							</li>
+							<li>
+								<a href="#">Organs</a>
+							</li>
+							<li>
+								<a href="#">Importance of knowing symptoms</a>
+							</li>
+							<li>
+								<a href="#">Symptom Matcher</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Diagnosis</a>
+					</li>
+					<li>
+						<a href="#">Treatment</a>
+					</li>
+					<li class="has-dropdown">
+						<a href="#">Information  &#x25BC;</a>
+						<ul class="dropdown">
+							<li>
+								<a href="#">Reference Center</a>
+							</li>
+							<li>
+								<a href="#">Support Material</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<a href="#" class="digital-magazine">
+					<span class="title">DIGITAL MAGAZINE</span>
+					<span class="subtitle">
+						<img src="{{ directory }}/images/magazine.png" alt="Heart"/>
+					</span>
+				</a>
+			</nav>
+		</header>
+
+		{# <section class="hero-slider">
+											<div class="slide active">
+												<img src="{{ directory }}/images/banner1.png" alt="Slide 1"/>
+												<div class="slider-content">
+													<h2>Why investigate the family?</h2>
+												</div>
+											</div>
+								
+											<div class="slide">
+												<img src="{{ directory }}/images/banner2.png" alt="Slide 2"/>
+												<div class="slider-content">
+													<h2>Diagnosis changes outcomes</h2>
+												</div>
+											</div>
+								
+											<div class="slide">
+												<img src="{{ directory }}/images/banner3.png" alt="Slide 3"/>
+												<div class="slider-content">
+													<h2>Resources for patients</h2>
+												</div>
+											</div>
+								
+											<!-- Slider controls -->
+											<div class="slider-controls">
+												<button class="prev">&#10094;</button>
+												<div class="counter">
+													<span class="current">01</span>
+													/
+													<span class="total">03</span>
+												</div>
+												<button class="next">&#10095;</button>
+											</div>
+										</section> #}
+
+		<!-- HERO SLIDER -->
+		<section
+			class="hero-slider" aria-label="Featured">
+			<!-- slides -->
+			<div class="slides">
+				<div class="slide active">
+					<img src="{{ directory }}/images/banner1.png" alt="Slide 1">
+				</div>
+				<div class="slide">
+					<img src="{{ directory }}/images/banner2.png" alt="Slide 2">
+				</div>
+				<div class="slide">
+					<img src="{{ directory }}/images/banner3.png" alt="Slide 3">
+				</div>
+			</div>
+
+			<svg class="left-mask" viewbox="0 0 1000 700" preserveaspectratio="none" aria-hidden="true">
+				<path d="M0,0
+															             C50,250 350,350 1000,1000
+															             L0,400
+															             Z" fill="#fff"/>
+			</svg>
+
+			{# <svg width="100%" height="500px" viewBox="0 0 1440 500" xmlns="http://www.w3.org/2000/svg">
+									  <path d="M0,0 
+									           C0,100 200,200 400,280 
+									           C600,360 800,440 1000,500 
+									           L0,500 
+									           Z" 
+									        fill="#F71919" />
+									</svg> #}
+
+			<div class="slide-index" aria-hidden="true">
+				<span class="current">01</span>
+				<span class="divider"></span>
+				<span class="total">03</span>
+			</div>
+
+			<!-- arrows on the right -->
+			<div class="slider-arrows">
+				<button class="arrow prev" aria-label="Previous slide">
+					<span>&lsaquo;</span>
+				</button>
+				<button class="arrow next" aria-label="Next slide">
+					<span>&rsaquo;</span>
+				</button>
+			</div>
+		</section>
+		<footer class="site-footer">
+			<div class="container">
+				<p>&copy;
+					{{ "now"|date("Y") }}
+					Fabry —
+					{{ 'Placeholder footer — replace with legal text & links'|t }}</p>
+			</div>
+		</footer>
+
+		<js-bottom-placeholder token="{{ js_bottom_placeholder_token }}"/>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+name: Fabry Theme
+type: theme
+description: 'Custom theme to mimic doencadefabry header and slider (placeholders).'
+core_version_requirement: ^10 || ^11
+base theme: olivero
+libraries:
+  - fabry_theme/global
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  highlighted: Highlighted
+  content: Content
+  footer: Footer
