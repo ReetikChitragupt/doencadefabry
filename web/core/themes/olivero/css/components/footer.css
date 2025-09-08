@@ -38,8 +38,3 @@
   text-decoration: none;
 }
 
-@media (min-width: 75rem) {
-  body:not(.is-always-mobile-nav) .site-footer {
-    border-inline-start: solid var(--content-left) var(--color--black);
-  }
-}

@@ -1,0 +1,158 @@
+<div class="top-subheader">
+	<p>ACCESS OUR
+		<span>EXCLUSIVE PLATFORM</span>
+		FOR HEALTH PROFESSIONALS</p>
+</div>
+<header class="header-wrap" role="banner">
+	<div
+		class="header-inner">
+		<!-- Logo -->
+		<div class="header-logo">
+			<a href="{{ path('<front>') }}" rel="home" aria-label="Home">
+				<img src="{{ directory }}/images/logo-fabry.webp" alt="Fabry"/>
+			</a>
+		</div>
+
+		<!-- Hamburger -->
+		<div class="menu-toggle" aria-label="Toggle menu">&#9776;</div>
+		<!-- Navigation -->
+		<nav class="primary-nav" role="navigation" aria-label="{{ 'Primary menu'|t }}">
+			<ul class="nav-menu">
+				<li class="has-dropdown">
+					<a href="#">{{ 'Doença de Fabry'|t }}</a>
+					<ul class="dropdown">
+						<li>
+							<a href="/understanding">{{ 'Entendendo a doença de Fabry'|t }}</a>
+						</li>
+						<li>
+							<a href="/investigate">{{ 'PORQUE INVESTIGAR A FAMÍLIA'|t }}</a>
+						</li>
+						<li>
+							<a href="/prevalence">{{ 'PREVALÊNCIA DA DOENÇA DE FABRY'|t }}</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">{{ 'Sinais e Sintomas'|t }}</a>
+					<ul class="dropdown">
+						<li>
+							<a href="#">{{ 'Manifestations of Doença de Fabry'|t }}</a>
+						</li>
+						<li>
+							<a href="/orgaos">{{ 'Órgãos'|t }}</a>
+						</li>
+						<li>
+							<a href="#">{{ 'The importance of knowing your symptoms'|t }}</a>
+						</li>
+						<li>
+							<a href="#">{{ 'Symptom Matcher'|t }}</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/diagnosis">{{ 'Diagnóstico'|t }}</a>
+				</li>
+				<li>
+					<a href="/treatment">{{ 'Tratamento'|t }}</a>
+				</li>
+				<li class="has-dropdown">
+					<a href="#">{{ 'Informações'|t }}</a>
+					<ul class="dropdown">
+						<li>
+							<a href="/references">{{ 'Centro de Referências'|t }}</a>
+						</li>
+						<li>
+							<a href="/support">{{ 'Material de Apoio'|t }}</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+		</nav>
+
+		<!-- Digital Magazine (custom button) -->
+		<div class="nav-extra">
+			<a
+				href="#" class="digital-magazine">
+				<!-- Include Font Awesome for the magnifying glass icon -->
+
+				<div class="symptom-matcher-button sm-btn-title">
+					<img src="{{ directory }}/images/sm-img.png" alt="sm-img">
+				</div>
+
+				<span class="title">DIGITAL MAGAZINE</span>
+				<span class="subtitle"><img src="{{ directory }}/images/magazine.png" alt="Heart"/>
+				</span>
+			</a>
+		</div>
+
+
+	</div>
+	<!-- Mobile Sidebar -->
+	<nav class="mobile-nav" id="mobileNav">
+		<div class="mobile-nav-header">
+			<img src="{{ directory }}/images/logo-fabry.webp" alt="Fabry Logo" class="mobile-logo">
+			<button class="close-btn" aria-label="Close menu" style="font-weight:900">✕</button>
+		</div>
+		<ul>
+			<li class="has-dropdown">
+				<a href="#">Doença de Fabry &#x25BC;</a>
+				<ul class="dropdown">
+					<li>
+						<a href="/understanding">{{ 'Entendendo a doença de Fabry'|t }}</a>
+					</li>
+					<li>
+						<a href="/investigate">{{ 'PORQUE INVESTIGAR A FAMÍLIA'|t }}</a>
+					</li>
+					<li>
+						<a href="/prevalence">{{ 'PREVALÊNCIA DA DOENÇA DE FABRY'|t }}</a>
+					</li>
+					<li>
+						<a href="#">Symptom Matcher</a>
+					</li>
+				</ul>
+			</li>
+			<li class="has-dropdown">
+				<a href="#">Sinais e Sintomas &#x25BC;</a>
+				<ul class="dropdown">
+					<li>
+						<a href="#">Manifestations</a>
+					</li>
+					<li>
+						<a href="/orgaos">Órgãos</a>
+					</li>
+					<li>
+						<a href="#">Importance of knowing symptoms</a>
+					</li>
+					<li>
+						<a href="#">Symptom Matcher</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/diagnosis">Diagnóstico</a>
+			</li>
+			<li>
+				<a href="/treatment">Tratamento</a>
+			</li>
+			<li class="has-dropdown">
+				<a href="#">Informações  &#x25BC;</a>
+				<ul class="dropdown">
+					<li>
+						<a href="/references">Centro de Referências</a>
+					</li>
+					<li>
+						<a href="/support">Material de Apoio</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<a href="#" class="digital-magazine">
+			<span class="title">DIGITAL MAGAZINE</span>
+			<span class="subtitle">
+				<img src="{{ directory }}/images/magazine.png" alt="Heart"/>
+			</span>
+		</a>
+	</nav>
+</header>

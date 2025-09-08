@@ -1,0 +1,14 @@
+<?php
+
+function fabry_theme_theme($existing, $type, $theme, $path) {
+  return [
+    'fabry_theme_understanding' => [
+      'variables' => ['content' => NULL],
+      'template' => 'pages/understanding', // maps to understanding.html.twig
+    ],
+    'fabry_theme_investigate' => [
+      'variables' => ['content' => NULL],
+      'template' => 'pages/investigate', // maps to investigate.html.twig
+    ],
+  ];
+}

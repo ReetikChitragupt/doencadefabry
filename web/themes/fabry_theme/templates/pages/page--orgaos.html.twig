@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="{{ directory }}/css/pages.css">
+        <link rel="stylesheet" href="{{ directory }}/css/orgaos.css">
+		<script src="slider.js"></script>
+	</head>
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+
+		<section class="hero-overlay">
+			<div class="hero-image">
+				<div class="hero-text animate slide-up">
+					<h1>{{ 'Órgãos'|t }}</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-below-header">
+			<img src="{{ directory }}/images/banner-manifestacoes.webp" alt="{{ 'Equipe médica'|t }}">
+		</section>
+		<section class="content-section">
+			<section class="fabry-tabs-section">
+				<div class="tabs animate fade-in">
+					<button class="tab-button active" data-tab="tab1">
+						<div class="organ-item">
+							<div class="organ-card">
+								<img src="{{ directory }}/images/orangeimg1.png" alt="Coração">
+							</div>
+
+						</div>
+					</button>
+					<button class="tab-button" data-tab="tab2">
+						<div class="organ-item">
+							<div class="organ-card">
+								<img src="{{ directory }}/images/orangeimg2.png" alt="Rins">
+							</div>
+
+						</div>
+					</button>
+					<button class="tab-button" data-tab="tab3">
+						<div class="organ-item">
+							<div class="organ-card">
+								<img src="{{ directory }}/images/orangeimg3.png" alt="Cérebro">
+							</div>
+
+						</div>
+					</button>
+					<button class="tab-button" data-tab="tab4">
+						<div class="organ-item">
+							<div class="organ-card">
+								<img src="{{ directory }}/images/orangeimg4.png" alt="Outros órgãos">
+							</div>
+
+						</div>
+					</button>
+				</div>
+           </section>
+		</section>
+        <section class="fabry-tabs-section">
+            <div class="fabry-text tab-content animate fade-in" id="tab1">
+                <section class="">
+                    <h2>Coração</h2>
+                    <p>A doença de Fabry (DF) pode cursar com cardiomiopatia (que é doença do músculo cardíaco), decorrente de hipertrofia do ventrículo esquerdo (aumento da espessura do músculo do lado esquerdo do coração). A cardiomiopatia começa a ser notada entre os 20 e 40 anos de idade.1 Os sintomas cardíacos ocorrem em 60% dos indivíduos com DF.2</p>
+                    <p>
+                        As manifestações cardíacas comuns incluem: 1,2
+                    </p>
+                </section>
+                <div class="manifest-cardiac">
+                    <div class="w57" style="visibility: visible;">
+                        <img src="{{ directory }}/images/manifestacao-cardiaca.webp" alt="">
+                    </div>
+                    <div class="w35">
+                        <div class="manifest-list">
+                            <p class="sub-title--detail" style="visibility: visible;">Anormalidades  valvulares</p>
+                            <p class="sub-title--detail" style="visibility: visible;">DOENÇA DAS ARTÉRIAS CORONÁRIAS
+                            </p>
+                            <!-- <p class="sub-title--detail wow animate__animated animate__fadeInLeft">Defeitos de condução</p> -->
+                            <p class="sub-title--detail"  style="visibility: visible;">Arritmias</p>
+                            <p class="sub-title--detail"  style="visibility: visible;">Insuficiência cardíaca</p>
+                            <p class="sub-title--detail"  style="visibility: visible;">Cardiomiopatia Hipertrófica (CH)</p>
+                            <!-- <p class="sub-title--detail wow animate__animated animate__fadeInLeft"">Hipertrofia ventricular esquerda</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <section class="">
+                    <div class="fabry-text animate fade-in">
+
+                        <div class="content-text " style="visibility: visible">
+                            <p class="content-text__paragraph">As principais manifestações cardíacas da doença de Fabry (DF) são:</p>
+                        </div>
+
+                        <ul class="list " style="visibility: visible">
+                            <li class="content-text__paragraph content-text__paragraph--list">Hipertrofia (aumento) do ventrículo esquerdo.<sup><small>3</small></sup></li>
+
+                            <li class="content-text__paragraph content-text__paragraph--list">Insuficiência cardíaca.<sup><small>3</small></sup></li>
+
+                            <li class="content-text__paragraph content-text__paragraph--list">Sintomas cardíacos: dor torácica, arritmias e diminuição da capacidade de exercícios.<sup><small>3,4</small></sup></li>
+                        </ul>
+
+                        <div class="cards">
+                            <div class="cards__img cards__img--large " style="background-image: url(&quot;{{ directory }}/images/exercicio-fisico.webp&quot;); visibility: visible; animation-delay: 0."></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="tab-content animate fade-in" id="tab2" style="display: none;">
+                <h2>O comprometimento renal é muito comum na doença de Fabry 1,2</h2>
+                
+                <p>A Doença de Fabry afeta os rins de forma progressiva em quase todos os pacientes do sexo masculino e em muitos do sexo feminino, podendo evoluir para doença renal em estágio terminal e morte prematura.1,2</p>
+                <p>O acúmulo de Gb3 e lyso-Gb3 ocorre em todas as células renais: endoteliais, tubulares, mesangiais e, principalmente, os podócitos. Assim sendo, a doença de Fabry (DF) pode causar doença renal tubular, vascular e glomerular.3 Geralmente, as manifestações renais ocorrem já na primeira década de vida, progredindo com o tempo.4,5</p>
+                <p>As principais características do <span class="highlight">comprometimento renal</span> na DF são a proteinúria e a queda da função renal (redução da TFG – taxa de filtração glomerular).4</p>
+                <p>A história natural se inicia com hiperfiltração (TFG > 120 ml/min), seguida de podocitúria, albuminúria, macroproteinúria, redução da TFG e doença renal terminal.3 Hematúria microscópica e síndrome nefrótica são relativamente raros.4</p>
+
+                <h2>Uma proporção significativa de pacientes com doença de Fabry evolui para diálise ou transplante renal 6</h2>
+                
+                <p>A falta de diagnóstico da Doença de Fabry é comum e o atraso médio entre o início dos sintomas e o diagnóstico definitivo pode variar de 13,7 a 16,3 anos, respectivamente no sexo masculino e feminino.7</p>
+                <p>Diagnósticos diferenciais na nefropatia de Fabry:8</p>
+                <div class="fabry-content animate fade-in">
+                    <div class="fabry-text">
+                    
+                        <ul class="list " style="visibility: visible">
+                    
+                            <li class="content-text__paragraph content-text__paragraph--list">Diabetes mellitus</li>
+
+                            <li class="content-text__paragraph content-text__paragraph--list">Hipertensão arterial</li>
+
+                            <li class="content-text__paragraph content-text__paragraph--list">Glomerulonefrite</li>
+                            <li class="content-text__paragraph content-text__paragraph--list">Lúpus eritematoso sistêmico</li>
+
+                            <li class="content-text__paragraph content-text__paragraph--list">Síndrome hemolítico-urêmica</li>
+
+                            <li class="content-text__paragraph content-text__paragraph--list">Gota úrica</li>
+                            <li class="content-text__paragraph content-text__paragraph--list">Amiloidose</li>
+                            <li class="content-text__paragraph content-text__paragraph--list">Nefrite intersticial</li>
+                        </ul>
+
+                
+                    </div>
+                    <div class="fabry-image">
+                        <img src="{{ directory }}/images/transplante-renal.webp" alt="Imagem ilustrativa da Doença de Fabry"/>
+                    </div>
+                    <p>
+                    O diagnóstico definitivo do comprometimento renal na DF pode necessitar da realização de biopsia renal, se o médico achar necessário.3
+                    </p>
+                    <p>A doença renal progride mais rapidamente em indivíduos do sexo masculino e que apresentam maior grau de proteinúria.</p>
+                    <p>Embora a doença possa progredir para doença renal grave, o advento de tratamentos específicos e os avanços no tratamento da insuficiência renal melhoraram o prognóstico nos últimos anos.9</p>
+                </div>
+            </div>
+            <div class="tab-content animate fade-in" id="tab3" style="display: none;">
+                <h2>Manifestações cerebrovasculares</h2>
+                <div class="fabry-content animate fade-in">
+                    <div class="fabry-text">
+                        <p>As manifestações neurológicas cerebrovasculares da doença de Fabry (DF) podem ocorrer no adulto jovem, entre 20 e 50 anos.1,2</p>
+                        <p>O indivíduo com DF apresenta maior risco de desenvolver arritmias cardícas, o que por sua vez pode favorecer o desenvolvimento de coágulos, que podem migrar para o cérebro e causar bloqueios temporárias da circulação cerebral, que são chamados de ataques isquêmicos transitórios (AITs).1,2</p>
+                        <p>Além dos ataques isquêmicos transitórios, os indivíduos com DF podem apresentar maior risco de desenvolver acidentes vasculares cerebrais (AVCs, “derrames”), por isso o <span class="highlight">acompanhamento médico</span> é importante, visto que em alguns casos as medidas preventivas podem ser úteis.1,2 A presença de hipertrofia cardíaca, arritmias, angioqueratomas, comprometimento nos rins e histórico de AVCs ou AITs podem indicar um maior risco de desenvolver problemas cerebrovasculares.1,3</p>
+                
+                    </div>
+                    <div class="fabry-image">
+                        <img src="{{ directory }}/images/manifestacoes-sistema-nervoso-central.webp" alt="Imagem ilustrativa da Doença de Fabry"/>
+                    </div>
+                    <p>
+                    O diagnóstico definitivo do comprometimento renal na DF pode necessitar da realização de biopsia renal, se o médico achar necessário.3
+                    </p>
+                    <p>A doença renal progride mais rapidamente em indivíduos do sexo masculino e que apresentam maior grau de proteinúria.</p>
+                    <p>Embora a doença possa progredir para doença renal grave, o advento de tratamentos específicos e os avanços no tratamento da insuficiência renal melhoraram o prognóstico nos últimos anos.9</p>
+                </div>
+                <h2>Manifestações neuropsiquiátricas</h2>
+                 <div class="fabry-content animate fade-in">
+                    <div class="fabry-text">
+                        <p>Podem ocorrer, como manifestações da DF, depressão, ansiedade e crises de pânico. A depressão é frequente, acomentendo metade dos indivíduos com DF, estando associada à presença de dor crônica.1,3 Comprometimento cognitivo e demência podem ocorrer, mas são mais raros.1,3</p>
+                    </div>
+                </div>
+                <div class="cards">
+                            <div class="cards__img cards__img--large " style="background-image: url(&quot;{{ directory }}/images/depressao-df.webp&quot;); visibility: visible; animation-delay: 0."></div>
+                </div>
+                <h2>Dor</h2>
+                 <div class="fabry-content animate fade-in">
+                    <div class="fabry-text">
+                        <p>Dor neuropática: também chamada de acroparestesia (por acometer as extremidades), a dor na DF pode ser episódica ou crônica, e decorre da perda de fibras nervosas finas desmielinizadas, acúmulo de Gb3 na raiz dorsal dos gânglios e descargas neuronais ectópicas.1 São observados intolerância ao calor ou frio e disfunção da sudorese (geralmente hipoidrose).1 A acroparestesia corre na infância, mais precocemente em meninos e pode desaparecer com a idade.3</p>
+                        <p>Um estudo de pacientes brasileiros mostrou que 80% dos homens e 63% da mulheres apresentam dor neuropática na data do diagnóstico.4</p>
+                        <p>A dor neuropática nas extremidades é o sintoma inicial mais frequente na DF, mas por ser pouco específica é frequentemente não diagnosticada.5</p>
+                    </div>
+                </div>
+                <div class="cards">
+                            <div class="cards__img cards__img--large " style="background-image: url(&quot;{{ directory }}/images/dor-neuropatica-acroparestesia.webp&quot;); visibility: visible; animation-delay: 0."></div>
+                </div>
+
+                
+                <section class="fabry-section-cards">
+                    <div class="fabry-box">
+                        <h3>DOR E FORMIGAMENTO</h3>
+                        <p>Dor e formigamento nas extremidades são comuns na doença de Fabry¹</p>
+                    </div>
+                    <div class="fabry-box">
+                        <h3>ATIVIDADE FÍSICA</h3>
+                        <p>Atividade física, alterações da temperatura e estresse podem desencadear um ataque de dor.⁵</p>
+                    </div>
+                    <div class="fabry-box">
+                        <h3>DOR⁵</h3>
+                        <p>A dor é um dos sintomas mais prevalentes na Doença de Fabry.⁶</p>
+                    </div>
+                </section>
+
+            </div>
+            
+        </section>
+ 
+				
+        <button class="collapsible-btn" id="toggleBtn">
+            Referências
+            <i class="fa-solid fa-chevron-down arrow-btn" id="arrow-btn"></i>
+        </button>
+
+        <div class="collapsible-content animate slide-up" id="collapsibleContent">
+            <ol>
+                <li>Boggio P, Luna PC, Abad ME, Larralde M. Doença de Fabry. Anais Brasileiros de Dermatologia; 84: 367–76 (2009).</li>
+                <li>Michaud M, Mauhin W, Belmatoug N, et al. When and How to Diagnose Fabry Disease in Clinical Practice. Am J Med Sci. DOI: 10.1016/j.amjms.2020.07.011 (2020).</li>
+                <li>Basta M, Pandya AM. Genetics X-Linked Inheritance StatPearls Publishing; (2020). Disponível em: http://www.ncbi.nlm.nih.gov/pubmed/32491315 Acesso em; (08 mar.,2023)</li>
+                <li>Bernardes TP, Foresto RD, Kirsztajn GM. Fabry disease: Genetics, pathology and treatment. Rev Assoc Med Bras; 66:s10–6 (2020).</li>
+                <li>Ortiz A, Germain DP, Desnick RJ, et al. Fabry disease revisited: Management and treatment recommendations for adult patients. Molecular Genetics and Metabolism; 123:416–27 (2018).</li>
+            </ol>
+        </div>
+
+
+				{% include '@fabry_theme/includes/footer.html.twig' %}</body>
+		</html>
+	</body>
+</html>

@@ -1,8 +1,0 @@
-global:
-  css:
-    theme:
-      css/style.css: {}
-  js:
-    js/slider.js: {}
-  dependencies:
-    - core/drupal

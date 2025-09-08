@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="{{ directory }}/css/pages.css">
+		<script src="slider.js"></script>
+	</head>
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+
+		<section class="hero-overlay">
+			<div class="hero-image">
+				<div class="hero-text animate slide-up">
+					<h1>{{ 'ENTENDA O QUE É A DOENÇA DE FABRY'|t }}</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-below-header">
+			<img src="{{ directory }}/images/banner-entendendo-a-doenca-de-fabry.webp" alt="{{ 'Equipe médica'|t }}">
+		</section>
+
+		<section class="content-section">
+			<div class="fabry-content animate fade-in">
+				<div class="fabry-text">
+					<h1>O que é a Doença de Fabry?</h1>
+					<p>
+						A Doença de Fabry é uma doença rara, de herança genética, ligada ao cromossomo X.1
+					</p>
+					<p>
+						Ela é causada por uma alteração no gene GLA, responsável pela produção de uma enzima chamada alfa galactosidase A (α-Gal A).
+						Pessoas com variantes neste gene podem ter a enzima α-Gal A total ou parcialmente defeituosa.2
+					</p>
+					<p>
+						Quando esta enzima não desempenha sua função adequadamente, as células do organismo não conseguem metabolizar substâncias conhecidas como glicoesfingolipídios (tipo de molécula formada por gordura e carboidrato), 
+						que então se acumulam nas células do organismo.1
+					</p>
+					<p>
+						O acúmulo dos glicoesfingolipídios nas células de vários órgãos, principalmente da pele, rins, coração, cérebro e olhos, é responsável pelo desenvolvimento dos sintomas.1
+					</p>
+				</div>
+				<div class="fabry-image">
+					<img src="{{ directory }}/images/molecula-dna.webp" alt="Imagem ilustrativa da Doença de Fabry"/>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-sub-section">
+			<div class="fabry-content  animate fade-in">
+				<div class="fabry-text">
+					<h1>São sinais bastante sugestivos de Doença de Fabry:</h1>
+					<p>
+						<li>dor ou formigamento nas mãos e pés;</li>
+						<li>angioqueratomas na pele (lesões avermelhadas com superfície grossa);</li>
+						<li>córnea verticilata (depósitos de pigmento na córnea seguindo um padrão em redemoinho).3</li>
+					</p>
+					<p>
+						Entretanto, nenhum sinal é específico da Doença de Fabry , podendo ser confundido com sinais de outras doenças. Por isso, o diagnóstico correto muitas vezes demora anos para ser realizado.3
+					</p>
+					<p>
+						Acesse outros conteúdos na Revista Digital <span class="highlight">Vivendo com Fabry</span>, um espaço destinado à publicação de conteúdos relacionados ao tema. Veja como é realizado o tratamento, histórias reais, depoimentos médicos e muito mais.
+					</p>
+					
+				</div>
+			</div>
+		</section>
+
+		<button class="collapsible-btn" id="toggleBtn">
+			Referências <i class="fa-solid fa-chevron-down arrow-btn" id="arrow-btn"></i>
+		</button>
+
+		<div class="collapsible-content animate slide-up" id="collapsibleContent">
+			<ol>
+			<li>Boggio P, Luna PC, Abad ME, Larralde M. Doença de Fabry. Anais Brasileiros de Dermatologia; 84: 367–76 (2009).</li>
+			<li>Michaud M, Mauhin W, Belmatoug N, et al. When and How to Diagnose Fabry Disease in Clinical Practice. Am J Med Sci. DOI: 10.1016/j.amjms.2020.07.011 (2020).</li>
+			<li>Basta M, Pandya AM. Genetics X-Linked Inheritance StatPearls Publishing; (2020). Disponível em: http://www.ncbi.nlm.nih.gov/pubmed/32491315 Acesso em; (08 mar.,2023)</li>
+			<li>Bernardes TP, Foresto RD, Kirsztajn GM. Fabry disease: Genetics, pathology and treatment. Rev Assoc Med Bras; 66:s10–6 (2020).</li>
+			<li>Ortiz A, Germain DP, Desnick RJ, et al. Fabry disease revisited: Management and treatment recommendations for adult patients. Molecular Genetics and Metabolism; 123:416–27 (2018).</li>
+			</ol>
+		</div>
+
+
+			{% include '@fabry_theme/includes/footer.html.twig' %}</body>
+	</body>
+</html>

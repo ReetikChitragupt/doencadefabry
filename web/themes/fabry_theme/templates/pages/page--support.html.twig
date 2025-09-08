@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="{{ directory }}/css/pages.css">
+		<script src="slider.js"></script>
+	</head>
+    <style>
+    .content-section-noBg{
+        padding: 50px 100px 0px 100px;
+        background-color: #fff;
+    }
+    </style>
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+
+		<section class="hero-overlay">
+			<div class="hero-image">
+				<div class="hero-text animate slide-up">
+					<h1>{{ 'Informações'|t }}</h1>
+				</div>
+			</div>
+		</section>
+
+		{#<section class="image-below-header">
+			 <img src="{{ directory }}/images/banner-tratamento-doenca-de-fabry.webp" alt="{{ 'Equipe médica'|t }}"> 
+		</section>#}
+		<section class="content-section-noBg">
+			<div class="fabry-content animate fade-in">
+				<div class="fabry-text">
+					<h1>Material de apoio</h1>		
+				</div>
+
+			</div>
+		</section>
+		<section class="content-sub-section-custom">
+			<section class="fabry-treatment-section">
+				<div
+					class="fabry-treatment-container">
+
+					<!-- Left Column -->
+					<div class="fabry-column">
+						<div class="fabry-box"> 
+							<div class="fabry-box-text">
+								<h3>CONHEÇA OUTRAS DOENÇAS</h3>
+								<a class="list-text" href="http://www.conhecaaeh.com.br/" target="_blank"><i class="fa-solid fa-chevron-right list-item-chevron"></i>Angioedema hereditário</a><br>
+                                <a class="list-text" href="http://www.mps2.com.br/" target="_blank"><i class="fa-solid fa-chevron-right list-item-chevron"></i>Síndrome de hunter</a><br>
+                                <a class="list-text" href="https://www.intestinocurto.com.br/" target="_blank"><i class="fa-solid fa-chevron-right list-item-chevron"></i>Síndrome do intestino curto</a><br>
+                                <a class="list-text" href="http://www.eufoco.com.br/" target="_blank"><i class="fa-solid fa-chevron-right list-item-chevron"></i>TDAH</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Right Column -->
+					<div class="fabry-column">
+						<div class="fabry-box">
+							<div class="fabry-box-text">
+								<h3>OUTRAS INFORMAÇÕES</h3>
+								<a class="list-text" href="https://www.takeda.com/pt-br/" target="_blank"><i class="fa-solid fa-chevron-right list-item-chevron"></i>TAKEDA</a>
+                                <br><br><br><br>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		{% include '@fabry_theme/includes/footer.html.twig' %}</body>
+</html></body></html>

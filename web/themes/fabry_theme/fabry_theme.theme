@@ -1,0 +1,14 @@
+<?php
+
+function fabry_theme_theme($existing, $type, $theme, $path) {
+  return [
+    'fabry_page' => [
+      'render element' => 'elements',
+      'template' => 'page', // maps to templates/page.html.twig
+    ],
+    'fabry_understanding' => [
+      'render element' => 'elements',
+      'template' => 'pages/understanding', // maps to templates/pages/understanding.html.twig
+    ],
+  ];
+}

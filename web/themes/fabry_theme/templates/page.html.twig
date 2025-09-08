@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<script src="slider.js"></script>
+	</head>
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+		<!-- HERO SLIDER -->
+		<section
+			class="hero-slider" aria-label="Featured">
+			<!-- slides -->
+			<div class="slides">
+				<div class="slide active">
+					<img src="{{ directory }}/images/banner1.png" alt="Slide 1">
+				</div>
+				<div class="slide">
+					<img src="{{ directory }}/images/banner2.png" alt="Slide 2">
+				</div>
+				<div class="slide">
+					<img src="{{ directory }}/images/banner3.png" alt="Slide 3">
+				</div>
+			</div>
+
+			<svg class="left-mask" viewbox="0 0 1000 700" preserveaspectratio="none" aria-hidden="true">
+				<path d="M0,0
+																																																																																																									             C50,250 350,350 1000,1000
+																																																																																																									             L0,400
+																																																																																																									             Z" fill="#fff"/>
+			</svg>
+
+
+			<div class="slide-index" aria-hidden="true">
+				<span class="current">01</span>
+				<span class="divider"></span>
+				<span class="total">03</span>
+			</div>
+
+			<!-- arrows on the right -->
+			<div class="slider-arrows">
+				<button class="arrow prev" aria-label="Previous slide">
+					<span>&lsaquo;</span>
+				</button>
+				<button class="arrow next" aria-label="Next slide">
+					<span>&rsaquo;</span>
+				</button>
+			</div>
+		</section>
+
+		<section class="fabry-info-section bgdetail animate fade-in" id="section2">
+			<h2 class="section-title">DOENÇA DE
+				<span>F</span>ABRY</h2>
+			<div
+				class="fabry-info-container">
+				<!-- Left Side: Text -->
+				<div class="fabry-info-text">
+					<h2>Entendendo a doença</h2>
+					<p>
+						O conhecimento sobre a doença é importante para lidar com os desafios ao longo de sua jornada.<sup>1,2</sup>
+					</p>
+					<p>
+						Fabry é uma doença rara, de herança genética, ligada ao cromossomo X. Quando acompanhada adequadamente e de forma multidisciplinar, apresenta melhorias significativas na qualidade de vida das pessoas diagnosticadas.<sup>1,2</sup>
+					</p>
+					<button class="fabry-btn">Entenda</button>
+				</div>
+
+				<!-- Divider -->
+				<div class="fabry-divider animate slide-up"></div>
+
+				<!-- Right Side: Images -->
+				<div class="fabry-info-images">
+					<div class="fabry-card">
+						<img src="{{ directory }}/images/fabrySectionImg1.webp" alt="Investigar Família"/>
+						<div class="fabry-card-text">POR QUE INVESTIGAR A FAMÍLIA?</div>
+					</div>
+					<div class="fabry-card">
+						<img src="{{ directory }}/images/fabrySectionImg2.webp" alt="Prevalência da Doença de Fabry"/>
+						<div class="fabry-card-text">PREVALÊNCIA DA DOENÇA DE FABRY</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="fabry-section animate slide-left">
+			<h2 class="section-title">
+				<span>S</span>INAIS E
+				<span>S</span>INTOMAS</h2>
+			<div
+				class="fabry-container">
+				<!-- Image -->
+				<div class="fabry-image">
+					<img src="{{ directory }}/images/fabrySection2Img1.webp" alt="Pessoa entendendo sobre a Doença de Fabry">
+				</div>
+
+				<!-- Divider -->
+				<div class="fabry-divider"></div>
+
+				<!-- Text Content -->
+				<div class="fabry-text">
+					<h2>Identifique os sinais e sintomas da doença</h2>
+					<p>
+						Quando se trata de cuidados à saúde, estar atento ao corpo e perceber suas mudanças 
+																																																																								            faz toda a diferença na busca por uma ajuda médica.1,2
+					</p>
+					<p>
+						A conscientização sobre a Doença de Fabry é importante para as pessoas aprenderem a identificar, em si e no outro, 
+																																																																								          os sinais e sintomas que a doença desenvolve tanto física como emocionalmente.1,21,2
+					</p>
+
+					<p>Entenda melhor como a Doença de Fabry se apresenta e saiba quais os cuidados necessários para melhorar a qualidade de vida.2,3</p>
+					<button class="fabry-btn">Saiba mais</button>
+				</div>
+			</div>
+		</section>
+
+		<div class="organ-section animate slide-up">
+			<div class="organ-item">
+				<div class="organ-card">
+					<img src="{{ directory }}/images/orangeimg1.png" alt="Coração">
+				</div>
+				<p class="organ-label">Coração</p>
+			</div>
+
+			<div class="organ-item">
+				<div class="organ-card">
+					<img src="{{ directory }}/images/orangeimg2.png" alt="Rins">
+				</div>
+				<p class="organ-label">Rins</p>
+			</div>
+
+			<div class="organ-item">
+				<div class="organ-card">
+					<img src="{{ directory }}/images/orangeimg3.png" alt="Cérebro">
+				</div>
+				<p class="organ-label">Cérebro</p>
+			</div>
+
+			<div class="organ-item">
+				<div class="organ-card">
+					<img src="{{ directory }}/images/orangeimg4.png" alt="Outros órgãos">
+				</div>
+				<p class="organ-label">Outros órgãos</p>
+			</div>
+		</div>
+
+		<section class="fabry-info-section bgdetail-reverse animate slide-right" id="section2">
+			<h2 class="section-title">
+				<span>D</span>iagnóstico</h2>
+			<div
+				class="fabry-info-container">
+				<!-- Left Side: Text -->
+				<div class="fabry-info-text">
+
+					<p>
+						Todos os dias, médicos e profissionais da saúde dedicam energia e conhecimento para ajudar pessoas a entenderem suas necessidades físicas e a alcançarem melhor qualidade de vida.<sup>1,2</sup>
+					</p>
+					<p>
+						Com Fabry não é diferente. O processo de diagnóstico costuma ser mais longo por ser uma doença rara e pacientes passam por diferentes áreas médicas até encontrarem o tratamento ideal.<sup>1,2</sup>
+					</p>
+					<button class="fabry-btn">Saiba mais</button>
+				</div>
+
+				<!-- Right Side: Images -->
+				<div class="fabry-info-images">
+					<div class="fabry-card">
+						<img src="{{ directory }}/images/fabrySection3Img1.webp" alt="Investigar Família"/>
+						<div class="fabry-card-text">POR QUE INVESTIGAR A FAMÍLIA?</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    
+		
+		<button class="collapsible-btn" id="toggleBtn">
+			Referências <i class="fa-solid fa-chevron-down arrow-btn" id="arrow-btn"></i>
+		</button>
+
+		<div class="collapsible-content animate slide-up" id="collapsibleContent">
+			<ol>
+			<li>Boggio P, Luna PC, Abad ME, Larralde M. Doença de Fabry. Anais Brasileiros de Dermatologia; 84: 367–76 (2009).</li>
+			<li>Michaud M, Mauhin W, Belmatoug N, et al. When and How to Diagnose Fabry Disease in Clinical Practice. Am J Med Sci. DOI: 10.1016/j.amjms.2020.07.011 (2020).</li>
+			<li>Basta M, Pandya AM. Genetics X-Linked Inheritance StatPearls Publishing; (2020). Disponível em: http://www.ncbi.nlm.nih.gov/pubmed/32491315 Acesso em; (08 mar.,2023)</li>
+			<li>Bernardes TP, Foresto RD, Kirsztajn GM. Fabry disease: Genetics, pathology and treatment. Rev Assoc Med Bras; 66:s10–6 (2020).</li>
+			<li>Ortiz A, Germain DP, Desnick RJ, et al. Fabry disease revisited: Management and treatment recommendations for adult patients. Molecular Genetics and Metabolism; 123:416–27 (2018).</li>
+			</ol>
+		</div>
+
+		{% include '@fabry_theme/includes/footer.html.twig' %}
+	</body>
+</html>

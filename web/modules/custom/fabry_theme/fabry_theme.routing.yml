@@ -1,0 +1,74 @@
+fabry_theme.page:
+  path: '/page'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::page'
+    _title: 'Main Page'
+  requirements:
+    _permission: 'access content'
+
+fabry_theme.understanding:
+  path: '/understanding'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::understanding'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
+fabry_theme.investigate:
+  path: '/investigate'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::investigate'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
+fabry_theme.prevalence:
+  path: '/prevalence'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::prevalence'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
+
+fabry_theme.orgaos:
+  path: '/orgaos'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::orgaos'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
+fabry_theme.diagnosis:
+  path: '/diagnosis'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::diagnosis'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
+fabry_theme.treatment:
+  path: '/treatment'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::treatment'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
+
+fabry_theme.references:
+  path: '/references'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::references'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
+
+fabry_theme.support:
+  path: '/support'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::support'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 

@@ -1,0 +1,7 @@
+name: Fabry Theme
+type: module
+description: 'Defines custom routes for pages using fabry_theme templates.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - node

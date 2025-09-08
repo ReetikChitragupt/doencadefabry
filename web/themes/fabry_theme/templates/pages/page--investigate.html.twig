@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="{{ directory }}/css/pages.css">
+		<script src="slider.js"></script>
+	</head>
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+
+		<section class="hero-overlay">
+			<div class="hero-image">
+				<div class="hero-text animate slide-up">
+					<h1>{{ 'POR QUE INVESTIGAR A FAMÍLIA DO PACIENTE COM DOENÇA DE FABRY?'|t }}</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-below-header">
+			<img src="{{ directory }}/images/banner-aconselhamento-genetico-doenca-de-fabry.webp" alt="{{ 'Equipe médica'|t }}">
+		</section>
+
+		<section class="content-section">
+			<div class="fabry-content animate fade-in">
+				<div class="fabry-text">
+					<h1>Por que investigar a família do paciente com Doença de Fabry?</h1>
+					<p>
+						A Doença de Fabry tem herança genética ligada ao cromossomo X. Isso significa que o gene GLA, diretamente ligado à doença, sofreu alterações nos portadores, localizado no cromossomo X.1,2
+					</p>
+					<p>O gene GLA localiza-se no braço longo do cromossomo X e já existem mais de 1000 variantes descritas para este gene. Quando falamos de família, a maioria possui "variantes privadas", ou seja, variantes específicas para essa determinada família.1,2
+					</p>
+					<p>
+						Os homens dessas famílias, como possuem apenas um cromossomo X, normalmente manifestam a doença na forma clássica, mais grave. Já as mulheres, que possuem dois cromossomos X, podem ter uma compensação do X afetado e, por isso, apresentam geralmente quadros mais leves, de início tardio e com menos sintomas. Entretanto, mulheres com Doença de Fabry também podem apresentar formas graves da doença.1,2
+					</p>
+					<p>
+						Homens com Doença de Fabry sempre vão transmitir o gene alterado para suas filhas, mas nunca para seus filhos, pois os filhos vão herdar o X da mãe e o Y do pai.1,3
+					</p>
+					<p>Mulheres com Doença de Fabry têm 50% de chance de transmitirem a doença para seus filhos, tanto do sexo feminino como do sexo masculino.1,3</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-sub-section">
+			<div class="fabry-content image-block animate fade-in">
+				<div class="fabry-image">
+					<img src="{{ directory }}/images/com-doenca-de-fabry-nova.webp" alt="Imagem ilustrativa da Doença de Fabry"/>
+                    <div class="sub-image">
+                       <img src="{{ directory }}/images/legenda-com-doenca-nova.webp" alt="Legenda - Não afetados pela Doença de Fabry"> <p class="content-text__paragraph"> Com Doença de Fabry</p>
+                    </div>
+				</div>
+				<div class="fabry-image">
+					<img src="{{ directory }}/images/nao-afetados-nova.webp" alt="Imagem ilustrativa da Doença de Fabry"/>
+                    <div class="sub-image">
+                        <img src="{{ directory }}/images/legenda-nao-afetados-nova.webp" alt="Legenda - Não afetados pela Doença de Fabry"><p class="content-text__paragraph"> Não afetados</p>
+                    </div>
+				</div>
+			</div>
+		</section>
+
+        <button class="collapsible-btn" id="toggleBtn">
+			Referências <i class="fa-solid fa-chevron-down arrow-btn" id="arrow-btn"></i>
+		</button>
+
+		<div class="collapsible-content animate slide-up" id="collapsibleContent">
+			<ol>
+			<li>Boggio P, Luna PC, Abad ME, Larralde M. Doença de Fabry. Anais Brasileiros de Dermatologia; 84: 367–76 (2009).</li>
+			<li>Michaud M, Mauhin W, Belmatoug N, et al. When and How to Diagnose Fabry Disease in Clinical Practice. Am J Med Sci. DOI: 10.1016/j.amjms.2020.07.011 (2020).</li>
+			<li>Basta M, Pandya AM. Genetics X-Linked Inheritance StatPearls Publishing; (2020). Disponível em: http://www.ncbi.nlm.nih.gov/pubmed/32491315 Acesso em; (08 mar.,2023)</li>
+			<li>Bernardes TP, Foresto RD, Kirsztajn GM. Fabry disease: Genetics, pathology and treatment. Rev Assoc Med Bras; 66:s10–6 (2020).</li>
+			<li>Ortiz A, Germain DP, Desnick RJ, et al. Fabry disease revisited: Management and treatment recommendations for adult patients. Molecular Genetics and Metabolism; 123:416–27 (2018).</li>
+			</ol>
+		</div>
+
+
+
+		{% include '@fabry_theme/includes/footer.html.twig' %}</body>
+</html></body></html>

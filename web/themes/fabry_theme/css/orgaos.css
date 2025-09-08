@@ -1,0 +1,248 @@
+.tab-button.active {
+    background-color: transparent;
+}
+
+.tab-button {
+    background-color: transparent;
+}
+
+.organ-card {
+    width: 150px;
+    height: 150px;
+}
+
+.background-img-references {
+    background-image: url('../images/manifestacao-cardiaca.webp') !important;
+    background-size: contain !important;
+    background-position: left !important;
+}
+
+.fabry-tabs-section {
+    padding: 0 !important;
+   
+}
+
+.content-section-noBg {
+    padding: 0px 0px 0px 100px;
+}
+
+.manifest-cardiac {
+    display: flex;
+    margin: 36px 0 56px;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.15);
+    width: 89%;
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.manifest-cardiac .w57 {
+    max-width: 825px;
+    width: 100%;
+}
+
+.manifest-cardiac .w35,
+.w-full {
+    width: 100%;
+}
+
+.tab-content {
+    padding: 0px 0px 0px 40px;
+}
+.manifest-cardiac .manifest-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    background-color: #e73452;
+}
+
+@media screen and(max-width: 1366px) {
+    .manifest-cardiac .sub-title--detail {
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        max-width: 410px;
+    }
+}
+
+@media screen and(max-width: 1600px) {
+    .manifest-cardiac .sub-title--detail {
+        font-size: 1.8rem;
+        line-height: 2.3rem;
+        max-width: 470px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section-noBg {
+        padding: 0px 25px 0 25px !important;
+    }
+    .tab-content {
+        padding: 10px;
+    }
+    .organ-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tab-button {
+        flex: auto;
+    }
+
+    .content-section {
+        margin-top: 1%;
+    }
+    .manifest-cardiac {
+        display: block;
+        width: 100%;
+    }
+
+}
+
+.manifest-cardiac .sub-title--detail {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    ;
+    text-transform: uppercase;
+    padding-left: 180px;
+    max-width: 440px;
+    position: relative;
+}
+
+.manifest-cardiac .sub-title--detail:after {
+    content: "";
+    display: block;
+    height: 11px;
+    position: absolute;
+    left: 67px;
+    top: 50%;
+    margin-top: -5.5px;
+    background-color: #fff;
+    -webkit-clip-path: circle();
+    clip-path: circle();
+    width: 11px;
+}
+
+
+.manifest-cardiac .sub-title--detail:before {
+    content: "";
+    position: absolute;
+    left: 63px;
+    top: 50%;
+    -webkit-clip-path: circle();
+    clip-path: circle();
+}
+
+.diagram-info .diagram .diagram__value span,
+.manifest-cardiac .sub-title--detail:before {
+    height: 19px;
+    margin-top: -9.5px;
+    background-color: rgba(255, 255, 255, .22);
+    width: 19px;
+    display: block;
+}
+
+
+
+
+@media screen and (max-width: 1366px) {
+     .content-text__paragraph {
+        font-size: 1.6rem;
+        line-height: 3rem;
+    }
+}
+@media screen and (max-width: 1600px) {
+     .content-text__paragraph {
+        font-size: 1.8rem;
+        line-height: 3.4rem;
+        margin-bottom: 20px;
+    }
+}
+ .content-text__paragraph {
+    color: #575756;
+    font-family: MontserratMedium, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-bottom: 30px;
+    letter-spacing: .96px;
+    word-break: break-word;
+}
+
+
+.cards__img:last-child {
+    margin-right: 0;
+}
+@media screen and (max-width: 1366px) {
+    .cards__img--large {
+        min-height: 300px;
+    }
+}
+@media screen and (max-width: 1600px) {
+    .cards__img--large {
+        min-height: 400px;
+    }
+}
+.cards__img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    margin-right: 45px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1280px) {
+     .content-text__paragraph--list:before {
+        top: 11px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+     .content-text__paragraph--list:before {
+        left: 8px;
+        top: 12px;
+    }
+}
+@media screen and (max-width: 1440px) {
+     .content-text__paragraph--list:before {
+        top: 14px;
+    }
+}
+@media screen and (max-width: 1600px) {
+     .content-text__paragraph--list:before {
+        left: 15px;
+        top: 12px;
+    }
+}
+.fabry-section-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fabry-box {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  flex: 1 1 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.fabry-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.fabry-box p {
+  font-size: 1rem;
+  color: #555;
+}

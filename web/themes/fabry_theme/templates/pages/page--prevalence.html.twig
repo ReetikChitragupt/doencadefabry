@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="{{ directory }}/css/pages.css">
+		<script src="slider.js"></script>
+	</head>
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+
+		<section class="hero-overlay">
+			<div class="hero-image">
+				<div class="hero-text animate slide-up">
+					<h1>{{ 'PREVALÊNCIA DA DOENÇA DE FABRY'|t }}</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-below-header">
+			<img src="{{ directory }}/images/banner-prevalencia-da-doenca-de-fabry.webp" alt="{{ 'Equipe médica'|t }}">
+		</section>
+
+		<section class="content-section">
+			<div class="fabry-content animate fade-in">
+				<div class="fabry-text">
+					<p>
+						A Doença de Fabry afeta 1 em cada 40.000 a 60.000 pessoas do sexo masculino. Em mulheres, não se conhece a proporção afetada. Formas leves e de início tardio são provavelmente mais comuns que a forma clássica. Devido à incidência de casos na população, Fabry é considerada uma doença rara.1
+					</p>
+					<p>A Doença de Fabry é frequentemente subdiagnosticada, especialmente nas formas mais leves, o que pode subestimar o número de casos da doença. Entretanto, programas de rastreamento neonatal podem, por outro lado, aumentar consideravelmente a incidência, devido à inclusão de variantes não patológicas e polimorfismos relacionados à patologia.2
+					</p>
+					<p>
+						Estudos demonstram que a incidência de Fabry em recém-nascidos varia conforme a manifestação dos sintomas. Na Itália, um estudo relatou que a cada 3.100 nascimentos, um bebê foi diagnosticado com alterações associadas a formas de início tardio da doença. Já a incidência de alterações associadas a formas clássicas foi de um diagnóstico para cada 37.000 bebês nascidos.3
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-sub-section">
+			<div class="fabry-content animate fade-in">
+				<div class="fabry-text">
+					<h1>Por que é uma doença rara?</h1>
+					<p>
+						Doença rara é considerada aquela que afeta até 65 pessoas em cada grupo de 100.000 indivíduos. Ainda é desconhecido o exato de doenças raras, mas estima-se que existam entre 6.000 a 8.000 tipos diferentes de doenças raras em todo o mundo.4</p>
+					<p>As doenças raras são caracterizadas por uma diversidade de sinais e sintomas e variam não só entre as doenças, mas também entre os pacientes que compartilham da mesma patologia. Manifestações relativamente frequentes podem simular doenças comuns, dificultando o seu diagnóstico, como ocorre na Doença de Fabry.4
+					</p>
+					<p>
+						Acesse outros conteúdos na Revista Digital
+						<span class="highlight">Vivendo com Fabry</span>, um espaço destinado à publicação de conteúdos relacionados ao tema. Veja como é feito o diagnóstico, tratamento, histórias reais, depoimentos médicos e muito mais.
+					</p>
+
+				</div>
+			</div>
+		</section>
+
+		<button class="collapsible-btn" id="toggleBtn">
+			Referências
+			<i class="fa-solid fa-chevron-down arrow-btn" id="arrow-btn"></i>
+		</button>
+
+		<div class="collapsible-content animate slide-up" id="collapsibleContent">
+			<ol>
+				<li>Boggio P, Luna PC, Abad ME, Larralde M. Doença de Fabry. Anais Brasileiros de Dermatologia; 84: 367–76 (2009).</li>
+				<li>Michaud M, Mauhin W, Belmatoug N, et al. When and How to Diagnose Fabry Disease in Clinical Practice. Am J Med Sci. DOI: 10.1016/j.amjms.2020.07.011 (2020).</li>
+				<li>Basta M, Pandya AM. Genetics X-Linked Inheritance StatPearls Publishing; (2020). Disponível em: http://www.ncbi.nlm.nih.gov/pubmed/32491315 Acesso em; (08 mar.,2023)</li>
+				<li>Bernardes TP, Foresto RD, Kirsztajn GM. Fabry disease: Genetics, pathology and treatment. Rev Assoc Med Bras; 66:s10–6 (2020).</li>
+				<li>Ortiz A, Germain DP, Desnick RJ, et al. Fabry disease revisited: Management and treatment recommendations for adult patients. Molecular Genetics and Metabolism; 123:416–27 (2018).</li>
+			</ol>
+		</div>
+
+
+		{% include '@fabry_theme/includes/footer.html.twig' %}</body>
+</html></body></html>

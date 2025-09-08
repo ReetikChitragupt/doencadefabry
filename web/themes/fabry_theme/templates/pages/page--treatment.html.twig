@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="{{ directory }}/css/pages.css">
+		<script src="slider.js"></script>
+	</head>
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+
+		<section class="hero-overlay">
+			<div class="hero-image">
+				<div class="hero-text animate slide-up">
+					<h1>{{ 'Tratamento: Doença de Fabry'|t }}</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-below-header">
+			<img src="{{ directory }}/images/banner-tratamento-doenca-de-fabry.webp" alt="{{ 'Equipe médica'|t }}">
+		</section>
+		<section class="content-section">
+
+			<h2 class="page-title">
+				A Doença de Fabry não tem cura, mas tem tratamento, podendo retardar o avanço e melhorar a qualidade de vida.
+			</h2><br>
+			<h2 class="page-title">É uma doença progressiva, ou seja, com o passar dos anos, os sintomas podem agravar ou até mesmo surgir novos sintomas.</h2>
+			<div class="fabry-content animate fade-in">
+				<div class="fabry-text">
+					<h1>Importância do tratamento da Doença de Fabry</h1>
+					<p>
+						A
+						<span class="highlight">Doença de Fabry</span>
+						é uma doença crônica multissistêmica, ou seja, acomete diversos órgãos e sistemas do corpo. Por isso, é fundamental o tratamento multidisciplinar.1,2
+					</p>
+					<p>
+						O tratamento de Fabry pode incluir também medicamentos específicos, que têm como alvo a reposição da enzima deficiente (terapia de reposição enzimática) ou o melhor funcionamento, quando possível, das enzimas do indivíduo.4
+					</p>
+					<p>
+						Cada um desses tratamentos deve ser indicado por médicos com experiência no tratamento da Doença de Fabry.1
+					</p>
+					<p>
+						O tratamento sintomático inclui o tratamento da dor, hipertensão, dislipidemias, angioqueratoma, doença renal, doença cardíaca, sintomas respiratórios, sintomas gastrointestinais e complicações oftalmológicas, auditivas e cerebrovasculares.1-3
+					</p>
+					<p>
+						Entre os profissionais que acompanham o paciente com Fabry estão os clínicos, pediatras, dermatologistas, otorrinolaringologistas, oftalmologistas, neurologistas, cardiologistas, nefrologistas, enfermeiros, psicólogos e geneticistas experientes no assunto.1-3
+					</p>
+				</div>
+				<div class="fabry-image">
+					<img src="{{ directory }}/images/perfil-mulher-doenca-de-fabry.webp" alt="Imagem ilustrativa da Doença de Fabry"/>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-sub-section">
+			<div class="fabry-text animate fade-in">
+				<h1>Outras terapias adjuntas podem ser utilizadas para tratar os sintomas da Doença de Fabry:5</h1>
+			</div>
+		</section>
+		<section class="content-sub-section-custom">
+			<section class="fabry-treatment-section">
+				<div
+					class="fabry-treatment-container">
+
+					<!-- Left Column -->
+					<div class="fabry-column">
+						<div class="fabry-box">
+							<img class="fabry-box-img" src="{{ directory }}/images/dor.png" alt="Do fabry-text">
+							<div class="fabry-box-text">
+								<h3>DOR</h3>
+								<p>Anticonvulsionantes, agentes antianginosos para dor no peito</p>
+							</div>
+						</div>
+						<div class="fabry-box">
+							<img class="fabry-box-img" src="{{ directory }}/images/doenca-renais.png" alt="Do fabry-text">
+							<div class="fabry-box-text">
+								<h3>HIPERTENSÃO</h3>
+								<p>Inibidores de ECA</p>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Right Column -->
+					<div class="fabry-column">
+						<div class="fabry-box">
+							<img class="fabry-box-img" src="{{ directory }}/images/hipertensao.png" alt="Do fabry-text">
+							<div class="fabry-box-text">
+								<h3>DOENÇAS CARDÍACAS</h3>
+								<p>Diuréticos, antiarrítmicos, marca-passo</p>
+							</div>
+						</div>
+						<div class="fabry-box">
+							<img class="fabry-box-img" src="{{ directory }}/images/doencas-cardiacas.png" alt="Do fabry-text">
+							<div class="fabry-box-text">
+								<h3>DOENÇAS RENAIS</h3>
+								<p>Diálises, transplantes, inibidores de ECA</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+        <section class="content-sub-section">
+            <div class="fabry-text">
+                <p>
+                    Acesse outros conteúdos na Revista Digital 
+                    <span class="highlight"> Vivendo com Fabry</span>
+                ,um espaço destinado à publicação de conteúdos relacionados ao tema. Veja como é feito o diagnóstico, tratamento, histórias reais, depoimentos médicos e muito mais.
+                </p>
+            </div>
+        </section>
+
+		<button class="collapsible-btn" id="toggleBtn">
+			Referências
+			<i class="fa-solid fa-chevron-down arrow-btn" id="arrow-btn"></i>
+		</button>
+
+		<div class="collapsible-content animate slide-up" id="collapsibleContent">
+			<ol>
+				<li>Boggio P, Luna PC, Abad ME, Larralde M. Doença de Fabry. Anais Brasileiros de Dermatologia; 84: 367–76 (2009).</li>
+				<li>Michaud M, Mauhin W, Belmatoug N, et al. When and How to Diagnose Fabry Disease in Clinical Practice. Am J Med Sci. DOI: 10.1016/j.amjms.2020.07.011 (2020).</li>
+				<li>Basta M, Pandya AM. Genetics X-Linked Inheritance StatPearls Publishing; (2020). Disponível em: http://www.ncbi.nlm.nih.gov/pubmed/32491315 Acesso em; (08 mar.,2023)</li>
+				<li>Bernardes TP, Foresto RD, Kirsztajn GM. Fabry disease: Genetics, pathology and treatment. Rev Assoc Med Bras; 66:s10–6 (2020).</li>
+				<li>Ortiz A, Germain DP, Desnick RJ, et al. Fabry disease revisited: Management and treatment recommendations for adult patients. Molecular Genetics and Metabolism; 123:416–27 (2018).</li>
+			</ol>
+		</div>
+
+
+		{% include '@fabry_theme/includes/footer.html.twig' %}</body>
+</html></body></html>
