@@ -31,6 +31,13 @@ class PagesController extends ControllerBase {
     ];
   }
 
+  public function manisfestation() {
+    return [
+      '#title' => Markup::create('manisfestation Page'),
+      '#theme' => 'page__manisfestation', // uses "pages/manisfestation.html.twig"
+    ];
+  }
+
   public function orgaos() {
     return [
       '#title' => Markup::create('orgaos Page'),

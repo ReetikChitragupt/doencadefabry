@@ -119,8 +119,10 @@
 .fabry-text p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #575756;
-  font-family: MontserratMedium, sans-serif;
+  color: #575756 !important;
+  font-family: MontserratMedium, sans-serif !important;
+  letter-spacing: .96px;
+  word-break: break-word;
   margin-bottom: 15px;
   text-align: justify;
 }
@@ -333,7 +335,9 @@
 .tab-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #333;
+  color: rgb(87, 87, 86);
+    font-family: MontserratMedium, sans-serif;
+    word-break: break-word;
 }
 
 /* Responsive */

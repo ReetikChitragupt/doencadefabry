@@ -19,7 +19,7 @@
 
 .fabry-tabs-section {
     padding: 0 !important;
-   
+
 }
 
 .content-section-noBg {
@@ -49,6 +49,7 @@
 .tab-content {
     padding: 0px 0px 0px 40px;
 }
+
 .manifest-cardiac .manifest-list {
     display: flex;
     flex-direction: column;
@@ -56,7 +57,20 @@
     height: 100%;
     background-color: #e73452;
 }
+.fabry-image-custom {
+  flex: 1 1 200px;
+  padding: 20px;
+  text-align: center;
+  object-fit: contain;
 
+}
+
+.fabry-image-custom img {
+  width: 250px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
 @media screen and(max-width: 1366px) {
     .manifest-cardiac .sub-title--detail {
         font-size: 1.6rem;
@@ -74,12 +88,17 @@
 }
 
 @media (max-width: 768px) {
+    .fabry-section-cards {
+        display: block !important; 
+    }
     .content-section-noBg {
         padding: 0px 25px 0 25px !important;
     }
+
     .tab-content {
         padding: 10px;
     }
+
     .organ-card {
         width: 100px;
         height: 100px;
@@ -92,6 +111,7 @@
     .content-section {
         margin-top: 1%;
     }
+
     .manifest-cardiac {
         display: block;
         width: 100%;
@@ -100,10 +120,8 @@
 }
 
 .manifest-cardiac .sub-title--detail {
-    color: #fff;
-    font-size: 1.2rem;
+    color: #fff !important;
     font-weight: bolder;
-    ;
     text-transform: uppercase;
     padding-left: 180px;
     max-width: 440px;
@@ -147,19 +165,21 @@
 
 
 @media screen and (max-width: 1366px) {
-     .content-text__paragraph {
+    .content-text__paragraph {
         font-size: 1.6rem;
         line-height: 3rem;
     }
 }
+
 @media screen and (max-width: 1600px) {
-     .content-text__paragraph {
+    .content-text__paragraph {
         font-size: 1.8rem;
         line-height: 3.4rem;
         margin-bottom: 20px;
     }
 }
- .content-text__paragraph {
+
+.content-text__paragraph {
     color: #575756;
     font-family: MontserratMedium, sans-serif;
     font-size: 1rem;
@@ -173,16 +193,19 @@
 .cards__img:last-child {
     margin-right: 0;
 }
+
 @media screen and (max-width: 1366px) {
     .cards__img--large {
         min-height: 300px;
     }
 }
+
 @media screen and (max-width: 1600px) {
     .cards__img--large {
         min-height: 400px;
     }
 }
+
 .cards__img {
     background-position: center;
     background-repeat: no-repeat;
@@ -197,52 +220,62 @@
 }
 
 @media screen and (max-width: 1280px) {
-     .content-text__paragraph--list:before {
+    .content-text__paragraph--list:before {
         top: 11px;
     }
 }
 
 @media screen and (max-width: 1366px) {
-     .content-text__paragraph--list:before {
+    .content-text__paragraph--list:before {
         left: 8px;
         top: 12px;
     }
 }
+
 @media screen and (max-width: 1440px) {
-     .content-text__paragraph--list:before {
+    .content-text__paragraph--list:before {
         top: 14px;
     }
 }
+
 @media screen and (max-width: 1600px) {
-     .content-text__paragraph--list:before {
+    .content-text__paragraph--list:before {
         left: 15px;
         top: 12px;
     }
 }
+
 .fabry-section-cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.fabry-box {
-  background-color: #f5f5f5;
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 300px;
-  flex: 1 1 300px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
+.fabry-box-cards {
+
+    border-radius: 12px;
+    max-width: 300px;
+    flex: 1 1 300px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    text-align: center;
+    margin: 50px 0;
+    padding: 25px;
+    min-height: 260px;
+    border-radius: 30px;
 }
 
-.fabry-box h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #333;
+.fabry-box-cards h3 {
+    font-size: 1rem;
+    color: #e73452;
+    font-family: MontserratBold, sans-serif;
+    text-transform: uppercase;
 }
 
-.fabry-box p {
-  font-size: 1rem;
-  color: #555;
+.fabry-box-cards p {
+    font-size: 1rem;
+    color: #575756;
+    font-family: MontserratRegular, sans-serif;
+    letter-spacing: .96px;
 }

@@ -30,6 +30,13 @@ fabry_theme.prevalence:
   requirements:
     _permission: 'access content' 
 
+fabry_theme.manisfestation:
+  path: '/manisfestation'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::manisfestation'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
 
 fabry_theme.orgaos:
   path: '/orgaos'

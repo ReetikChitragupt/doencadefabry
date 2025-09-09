@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ 'Doencadefabry' }}</title>
+		<link rel="stylesheetare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="{{ directory }}/css/pages.css">
+		<link rel="stylesheet" href="{{ directory }}/css/manisfestation.css">
+		<script src="slider.js"></script>
+	</head>
+
+	<body>
+		{# Include the header #}
+		{% include '@fabry_theme/includes/header.html.twig' %}
+
+		<section class="hero-overlay">
+			<div class="hero-image">
+				<div class="hero-text animate slide-up">
+					<h1>{{ 'Sintomas da Doença de Fabry'|t }}</h1>
+				</div>
+			</div>
+		</section>
+
+		<section class="image-below-header">
+			<img src="{{ directory }}/images/banner-sintomas-doenca-de-fabry.webp" alt="{{ 'Equipe médica'|t }}">
+		</section>
+		<section class="content-section">
+			<div class="fabry-content animate fade-in">
+				<div class="fabry-text">
+					<h1>Quando surgem os sintomas da Doença de Fabry?</h1>
+					<p>
+						A
+						<span class="highlight">Doença de Fabry</span>
+						é uma doença crônica multissistêmica, ou seja, acomete diversos órgãos e sistemas do corpo. Por isso, é fundamental o tratamento multidisciplinar.1,2
+					</p>
+					<p>
+						O tratamento de Fabry pode incluir também medicamentos específicos, que têm como alvo a reposição da enzima deficiente (terapia de reposição enzimática) ou o melhor funcionamento, quando possível, das enzimas do indivíduo.4
+					</p>
+					<p>
+						Cada um desses tratamentos deve ser indicado por médicos com experiência no tratamento da Doença de Fabry.1
+					</p>
+					<p>
+						O tratamento sintomático inclui o tratamento da dor, hipertensão, dislipidemias, angioqueratoma, doença renal, doença cardíaca, sintomas respiratórios, sintomas gastrointestinais e complicações oftalmológicas, auditivas e cerebrovasculares.1-3
+					</p>
+					<p>
+						Entre os profissionais que acompanham o paciente com Fabry estão os clínicos, pediatras, dermatologistas, otorrinolaringologistas, oftalmologistas, neurologistas, cardiologistas, nefrologistas, enfermeiros, psicólogos e geneticistas experientes no assunto.1-3
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="content-sub-section">
+			<div class="fabry-text animate fade-in">
+				<h1>São sintomas bastante sugestivos de Doença de Fabry:</h1>
+				<ul>
+					<li>córnea verticilata (depósitos de pigmento na córnea seguindo um padrão em redemoinho);</li>
+					<li>angioqueratomas na pele (lesões avermelhadas com superfície grossa);</li>
+					<li>dor ou formigamento nas mãos e pés.</li>
+				</ul>
+				<p>Mas, como podemos notar, nenhum sinal é específico da Doença de Fabry, podendo ser confundido com sinais de outras patologias. Por isso, o diagnóstico correto muitas vezes demora anos para ser realizado.2,4</p>
+				<p>Na forma clássica da doença, os órgãos mais comprometidos são os rins, coração, cérebro e pele.5</p>
+				<p>Algumas pessoas apresentam sintomas mais leves, enquanto outras mais graves. Os homens, geralmente, apresentam sintomas mais graves da Doença de Fabry, em comparação as mulheres.6</p>
+			</div>
+		</section>
+
+		<section class="content-sub-section" style="padding:0px !important">
+			<div class="signs-symptoms elem-webp webp-on" role="img" aria-label="Perfil de um personagem com indicativos dos sintomas da Doença de Fabry.">
+				<div class="symptoms-title animate fade-in" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+					<h2 class="sub-title sub-title--detail">Sinais e sintomas da
+						<strong>Doença de Fabry</strong>:</h2>
+				</div>
+
+				<div class="signs-sides">
+					<div class="left-side side">
+						<a href="#eye" class="eye symptoms actOpSymtoms animate fade-in" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+							Alterações oftalmológicas<sup>
+								<small>2</small>
+							</sup>
+							<span><img class="img-webp" alt="Alterações oftalmológicas" src="{{ directory }}/images/olho.webp"></span>
+						</a>
+						<a href="#anxiety" class="anxiety symptoms actOpSymtoms animate fade-in" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+							Ansiedade e depressão<sup>
+								<small>9</small>
+							</sup>
+							<span><img class="img-webp" data-original="{{ directory }}/images/ansiedade.png" data-webp="{{ directory }}/images/ansiedade.webp" alt="Ansiedade e depressão" src="{{ directory }}/images/ansiedade.webp"></span>
+						</a>
+						<a href="#sweat" class="sweat symptoms actOpSymtoms animate fade-in" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+							Suor<sup>
+								<small>2,8</small>
+							</sup>
+							<span><img class="img-webp" data-original="{{ directory }}/images/suor.png" data-webp="{{ directory }}/images/suor.webp" alt="Suor" src="{{ directory }}/images/suor.webp"></span>
+						</a>
+						<a href="#stomach" class="stomach symptoms actOpSymtoms animate fade-in" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInLeft;">
+							Problemas de estômago e intestino<sup>
+								<small>2,10</small>
+							</sup>
+							<span><img class="img-webp" data-original="{{ directory }}/images/estomago.png" data-webp="{{ directory }}/images/estomago.webp" alt="Problemas de estômago e intestino" src="{{ directory }}/images/estomago.webp"></span>
+						</a>
+						<a href="#pain" class="pain symptoms actOpSymtoms animate fade-in" data-wow-delay="1.1s">
+							Dor e queimação<sup>
+								<small>9</small>
+							</sup>
+							<span><img class="img-webp" data-original="{{ directory }}/images/fogo.png" data-webp="{{ directory }}/images/fogo.webp" alt="Dor e queimação" src="{{ directory }}/images/fogo.webp"></span>
+						</a>
+						<a href="#knee" class="knee symptoms actOpSymtoms animate fade-in" data-wow-delay="1.3s">
+							Osteopenia ou Osteoporose<sup>
+								<small>2</small>
+							</sup>
+							<span><img class="img-webp" data-original="{{ directory }}/images/joelho.png" data-webp="{{ directory }}/images/joelho.webp" alt="Osteopenia ou Osteoporose" src="{{ directory }}/images/joelho.webp"></span>
+						</a>
+					</div>
+
+					<div class="right-side side">
+						<a href="#brain" class="brain symptoms actOpSymtoms animate fade-in" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInRight;">
+							<span><img class="img-webp" data-original="{{ directory }}/images/cerebro.png" data-webp="{{ directory }}/images/cerebro.webp" alt="Cérebro" src="{{ directory }}/images/cerebro.webp"></span>Alteração do Sistema Nervoso<sup>
+								<small>8,9</small>
+							</sup>
+						</a>
+						<a href="#ear" class="ear symptoms actOpSymtoms animate fade-in" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+							<span><img class="img-webp" data-original="{{ directory }}/images/orelha.png" data-webp="{{ directory }}/images/orelha.webp" alt="Orelha" src="{{ directory }}/images/orelha.webp"></span>Problemas de Audição<sup>
+								<small>1,9</small>
+							</sup>
+						</a>
+						<a href="#heart" class="heart symptoms actOpSymtoms animate fade-in" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInRight;">
+							<span><img class="img-webp" data-original="{{ directory }}/images/coracao.png" data-webp="{{ directory }}/images/coracao.webp" alt="Coração" src="{{ directory }}/images/coracao.webp"></span>Problemas no Coração<sup>
+								<small>2</small>
+							</sup>
+						</a>
+						<a href="#lung" class="lung symptoms actOpSymtoms animate fade-in" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInRight;">
+							<span><img class="img-webp" data-original="{{ directory }}/images/pulmao.png" data-webp="{{ directory }}/images/pulmao.webp" alt="Pulmão" src="{{ directory }}/images/pulmao.webp"></span>
+							<strong>Sinais</strong>&nbsp;e&nbsp;<strong>sintomas</strong>&nbsp;pulmonares<sup>
+								<small>2</small>
+							</sup>
+						</a>
+						<a href="#kidneys" class="kidneys symptoms actOpSymtoms animate fade-in" data-wow-delay="1.1s" style="visibility: visible; animation-delay: 1.1s; animation-name: fadeInRight;">
+							<span><img class="img-webp" data-original="{{ directory }}/images/rins.png" data-webp="{{ directory }}/images/rins.webp" alt="Rins" src="{{ directory }}/images/rins.webp"></span>Problemas nos Rins
+							<sup>
+								<small>2</small>
+							</sup>
+						</a>
+						<a href="#skin" class="skin symptoms actOpSymtoms animate fade-in" data-wow-delay="1.3s">
+							<span><img class="img-webp" data-original="{{ directory }}/images/mao.png" data-webp="{{ directory }}/images/mao.webp" alt="Pele" src="{{ directory }}/images/mao.webp"></span>Alterações na pele<sup>
+								<small>2</small>
+							</sup>
+						</a>
+					</div>
+				</div>
+
+				<div class="signs-symptoms-details desk">
+					<div id="brain" class="card-symptoms animate slide-left">
+						<a href="#" class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/cerebro.png" data-webp="{{ directory }}/images/cerebro.webp" alt="Cérebro" src="{{ directory }}/images/cerebro.webp">
+						<p class="card-symptoms__title">Alteração do Sistema Nervoso<sup>
+								<small>8,9</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text"></p>
+						<ul class="card-symptoms__list">
+							<li>Tontura;</li>
+							<li>Fraqueza;</li>
+							<li>Vertigem;</li>
+							<li>Dormência no corpo;</li>
+							<li>Intolerância ao calor e ao frio;</li>
+							<li>Acidente Vascular Cerebral (derrame).</li>
+						</ul>
+					</div>
+
+					<div id="eye" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/olho.png" data-webp="{{ directory }}/images/olho.webp" alt="Olho" src="{{ directory }}/images/olho.webp">
+						<p class="card-symptoms__title">Alterações oftalmológicas<sup>
+								<small>2</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">Alterações na córnea como riscas ou espirais chamadas de córnea verticilata, vasos tortuosos e catarata.</p>
+					</div>
+
+					<div id="ear" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/orelha.png" data-webp="{{ directory }}/images/orelha.webp" alt="Orelha" src="{{ directory }}/images/orelha.webp">
+						<p class="card-symptoms__title">Problemas de Audição<sup>
+								<small>1,9</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">A audição  frequentemente está comprometida na
+							<strong>Doença de Fabry</strong>, podendo haver surdez progressiva ou súbita e zumbidos.</p>
+					</div>
+
+					<div id="heart" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/coracao.png" data-webp="{{ directory }}/images/coracao.webp" alt="Coração" src="{{ directory }}/images/coracao.webp">
+						<p class="card-symptoms__title">Problemas no Coração<sup>
+								<small>2</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">O coração pode desenvolver uma hipertrofia (aumento da espessura do músculo cardíaco) no ventrículo esquerdo, evoluindo para uma cardiomiopatia.</p>
+					</div>
+
+					<div id="stomach" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/estomago.png" data-webp="{{ directory }}/images/estomago.webp" alt="Estômago" src="{{ directory }}/images/estomago.webp">
+						<p class="card-symptoms__title">Problemas de estômago e intestino<sup>
+								<small>2,10</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">
+							<strong>Sintomas</strong>
+							gastrointestinais são frequentes em mais de 50% dos pacientes com
+							<strong>Doença de Fabry</strong>. Esta manifestação clínica é decorrente do depósito de Gb3 nos vasos do intestino. Os
+							<strong>sinais</strong>
+							gastrointestinais podem ser confundidos com síndrome do intestino irritável. Os principais
+							<strong>sintomas</strong>
+							são:</p>
+						<ul class="card-symptoms__list">
+							<li>Diarreia;</li>
+							<li>Vômitos;</li>
+							<li>Náuseas;</li>
+							<li>Constipação;</li>
+							<li>Dor abdominal.</li>
+						</ul>
+					</div>
+
+					<div id="kidneys" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/rins.png" data-webp="{{ directory }}/images/rins.webp" alt="Rins" src="{{ directory }}/images/rins.webp">
+						<p class="card-symptoms__title">Problemas nos Rins<sup>
+								<small>2</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">A doença renal pode progredir para insuficiência renal e evoluir para necessidade de diálise e transplante.</p>
+					</div>
+
+					<div id="skin" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/pele.png" data-webp="{{ directory }}/images/pele.webp" alt="Pele" src="{{ directory }}/images/pele.webp">
+						<p class="card-symptoms__title">Alterações na Pele<sup>
+								<small>2</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">Lesões vermelhas na pele (angioqueratomas), que surgem em geral na região do umbigo, mãos, joelhos, cotovelos e tronco, e espalham-se para as regiões genitais na adolescência.</p>
+					</div>
+
+					<div id="pain" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/queimacao.png" data-webp="{{ directory }}/images/queimacao.webp" alt="Queimação" src="{{ directory }}/images/queimacao.webp">
+						<p class="card-symptoms__title">Dor e queimação<sup>
+								<small>9</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">Os pacientes apresentam dor nas mãos e nos pés que surgem antes dos 18 anos. Além disso, manifestam sensação de formigamento que piora com o calor ou febre.</p>
+
+					</div>
+
+					<div id="sweat" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/suor.png" data-webp="{{ directory }}/images/suor.webp" alt="Suor" src="{{ directory }}/images/suor.webp">
+						<p class="card-symptoms__title">Suor<sup>
+								<small>2,8</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">O paciente geralmente apresenta hipoidrose (redução de suor).</p>
+					</div>
+
+					<div id="knee" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/joelho.png" data-webp="{{ directory }}/images/joelho.webp" alt="Joelho" src="{{ directory }}/images/joelho.webp">
+						<p class="card-symptoms__title">Osteopenia ou Osteoporose<sup>
+								<small>2</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text">Ocorrem em mais da metade dos pacientes.</p>
+					</div>
+
+					<div id="lung" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/pulmao.png" data-webp="{{ directory }}/images/pulmao.webp" alt="Pulmão" src="{{ directory }}/images/pulmao.webp">
+						<p class="card-symptoms__title">Pulmão<sup>
+								<small>2</small>
+							</sup>
+						</p>
+						<p class="card-symptoms__text"></p>
+						<ul class="card-symptoms__list">
+							<li>Chiado;</li>
+							<li>Tosse crônica;</li>
+							<li>Falta de ar durante exercícios.</li>
+						</ul>
+					</div>
+
+					<div id="anxiety" class="card-symptoms animate slide-left">
+						<a class="card-symptoms__close actCloseCard"><img class="img-webp" data-original="{{ directory }}/images/close-icon.png" data-webp="{{ directory }}/images/close-icon.webp" alt="Fechar" src="{{ directory }}/images/close-icon.webp"></a>
+						<img class="img-webp" data-original="{{ directory }}/images/ansiedade.png" data-webp="{{ directory }}/images/ansiedade.webp" alt="Ansiedade" src="{{ directory }}/images/ansiedade.webp">
+						<p class="card-symptoms__title">Ansiedade e depressão<sup>
+								<small>9</small>
+							</sup>
+						</p>
+					</div>
+				</div>
+			</div>
+         
+		</section>
+        <br>
+        <section class="content-sub-section">
+            <div class="fabry-text">
+                <p>Os principais sintomas durante a infância são a dor ou formigamento nas mãos e pés, que podem ser desencadeados por calor ambiente ou aumento da temperatura corporal relacionada aos exercícios físicos ou febre. Entretanto, esses sintomas são frequentemente interpretados de maneira errônea, diagnosticados como fibromialgia ou outra doença reumatológica.4,11</p>
+            </div>
+		</section>
+        <br>
+
+        <section class="content-sub-section">
+            <div class="fabry-text">
+                <h2 style="font-weight:300">Sintomas da Doença de Fabry ao longo do tempo</h2>
+            </div>
+		</section>
+
+		<button class="collapsible-btn" id="toggleBtn">
+			Referências
+			<i class="fa-solid fa-chevron-down arrow-btn" id="arrow-btn"></i>
+		</button>
+
+		<div class="collapsible-content animate slide-up" id="collapsibleContent">
+			<ol>
+				<li>Boggio P, Luna PC, Abad ME, Larralde M. Doença de Fabry. Anais Brasileiros de Dermatologia; 84: 367–76 (2009).</li>
+				<li>Michaud M, Mauhin W, Belmatoug N, et al. When and How to Diagnose Fabry Disease in Clinical Practice. Am J Med Sci. DOI: 10.1016/j.amjms.2020.07.011 (2020).</li>
+				<li>Basta M, Pandya AM. Genetics X-Linked Inheritance StatPearls Publishing; (2020). Disponível em: http://www.ncbi.nlm.nih.gov/pubmed/32491315 Acesso em; (08 mar.,2023)</li>
+				<li>Bernardes TP, Foresto RD, Kirsztajn GM. Fabry disease: Genetics, pathology and treatment. Rev Assoc Med Bras; 66:s10–6 (2020).</li>
+				<li>Ortiz A, Germain DP, Desnick RJ, et al. Fabry disease revisited: Management and treatment recommendations for adult patients. Molecular Genetics and Metabolism; 123:416–27 (2018).</li>
+			</ol>
+		</div>
+
+
+		{% include '@fabry_theme/includes/footer.html.twig' %}</body>
+</html></body><script>
+
+document.addEventListener("DOMContentLoaded", function () { // Select all <a> tags with the class 'actOpSymtoms'
+const links = document.querySelectorAll("a.actOpSymtoms");
+
+links.forEach(link => {
+link.addEventListener("click", function (event) {
+event.preventDefault(); // Prevent default anchor behavior if needed
+const hrefValue = this.getAttribute("href");
+console.log(hrefValue)
+document.getElementsByClassName("signs-sides")[0].style.display = "none";
+// document.getElementsByClassName("left-side")[0].style.display = "none";
+// document.getElementsByClassName("right-side")[0].style.display = "none";
+document.querySelector(hrefValue).style.display = "block";
+});
+});
+});
+const closeButtons = document.querySelectorAll('.card-symptoms__close');
+
+// Loop through each and attach a click event
+closeButtons.forEach(button => {
+button.addEventListener('click', () => { // Your custom action on click, e.g., hide the parent card
+button.closest('.card-symptoms').style.display = 'none';
+document.getElementsByClassName("signs-sides")[0].style.display = "block";
+const elements = document.getElementsByClassName("signs-sides");
+
+for (let i = 0; i < elements.length; i++) {
+elements[i].style.display = "flex";
+}
+// document.getElementsByClassName("left-side")[0].style.display = "block";
+// document.getElementsByClassName("right-side")[0].style.display = "block";
+});
+});</script></html>

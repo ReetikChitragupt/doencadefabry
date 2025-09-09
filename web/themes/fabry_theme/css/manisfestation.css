@@ -1,0 +1,395 @@
+  @media screen and (max-width: 1600px) {
+      .signs-symptoms .symptoms-title {
+          max-width: 600px;
+      }
+  }
+
+  .signs-symptoms .symptoms-title {
+      background-color: #e73452;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      display: flex;
+      ;
+      justify-content: flex-end;
+
+      width: 50%;
+      padding: 8px 50px 8px 100px;
+  }
+
+
+  .signs-symptoms .symptoms-title h2 {
+      color: #fff;
+      margin-bottom: 0;
+      display: inline-block;
+      font-size: 1.2em;
+      line-height: 2rem;
+  }
+
+  .page-default .sub-title--detail,
+  .page-default h2--detail {
+      color: #b22b3f;
+      font-family: MontserratBold, sans-serif;
+      font-size: 3rem;
+      line-height: 4.5rem;
+  }
+
+  .page-default .sub-title,
+  .page-default h2 {
+      font-size: 2.6rem;
+      line-height: 4rem;
+  }
+
+
+  .page-default .sub-title,
+  .page-default h2 {
+      font-size: 3rem;
+      line-height: 5rem;
+  }
+
+  .page-default .sub-title,
+  .page-default h2 {
+      color: #b22b3f;
+      font-family: MontserratRegular, sans-serif;
+      font-size: 3.5rem;
+      line-height: 5.5rem;
+      margin-bottom: 35px;
+      letter-spacing: .96px;
+  }
+
+  .signs-symptoms .signs-sides {
+      display: flex;
+      position: relative;
+      width: 100%;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side {
+      width: 47%;
+  }
+
+  .signs-symptoms .signs-sides .side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .eye {
+      margin: 50px 50px 0 0;
+  }
+
+
+  .signs-symptoms .signs-sides .side.left-side .eye {
+      margin: 55px 60px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .eye {
+      margin: 70px 60px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side .symptoms {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      border-radius: 6px;
+  }
+
+  .signs-symptoms .signs-sides .side .symptoms {
+      color: #e73452;
+      font-size: 1rem;
+
+      padding: 0 0 0 20px;
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      background-color: #fff;
+      font-family: MontserratSemiBold, sans-serif;
+      border-radius: 10px;
+      box-shadow: 0 0 3px 3px rgba(0, 0, 0, .15);
+      display: flex;
+      align-items: center;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .anxiety {
+      margin: 20px 60px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .eye {
+      margin: 50px 50px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .sweat {
+      margin: 20px 100px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .stomach {
+      margin: 80px 110px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .pain {
+      margin: 60px 75px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .knee {
+      margin: 70px 60px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side {
+      width: 53%;
+      align-items: flex-start;
+      position: relative;
+      padding-left: 0px !important;
+  }
+
+  .signs-symptoms .signs-sides .side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .symptoms {
+      padding: 0 20px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .brain {
+      margin: 0 0 0 40px;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .symptoms {
+      padding: 0 20px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .ear {
+      margin: 35px 0 0 70px;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .symptoms {
+      padding: 0 20px 0 0;
+  }
+
+
+  .signs-symptoms .signs-sides .side.right-side .heart {
+      margin: 55px 0 0 135px;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .symptoms {
+      padding: 0 20px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .lung {
+      margin: 40px 0 0 150px;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .symptoms {
+      padding: 0 20px 0 0;
+  }
+
+
+  .signs-symptoms .signs-sides .side.right-side .kidneys {
+      margin: 40px 0 0 145px;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .kidneys,
+  .signs-symptoms .signs-sides .side.right-side .lung {
+      margin: 50px 0 0 185px;
+  }
+
+  .signs-symptoms .signs-sides .side .symptoms {
+      font-size: 1.0rem;
+      line-height: 2.4rem;
+      border-radius: 6px;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .symptoms {
+      padding: 0 20px 0 0;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .skin {
+      margin: 80px 0 0 110px;
+  }
+
+  .signs-symptoms .signs-sides .side.right-side .skin {
+      margin: 80px 0 0 130px;
+  }
+
+  .signs-symptoms .signs-sides .side .symptoms {
+      font-size: 1.0rem;
+      line-height: 2.4rem;
+      border-radius: 6px;
+  }
+
+  .signs-symptoms .signs-sides .side .symptoms span {
+      height: 35px;
+      width: 35px;
+      border-radius: 6px;
+  }
+
+  .signs-symptoms .signs-sides .side .symptoms span {
+      background-color: #e73452;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      height: 40px;
+      width: 40px;
+      margin-left: 10px;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side .stomach {
+      margin: 80px 110px 0 0;
+      font-size: 0.7rem;
+  }
+
+  .signs-symptoms .signs-sides .side .symptoms span:before {
+      content: "";
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .signs-symptoms .signs-sides .side.left-side span .img-webp {
+      height: 16px;
+      width: 40px;
+      object-fit: contain;
+  }
+
+  .signs-symptoms-details .card-symptoms {
+      border-radius: 20px;
+      background-color: #e73452;
+      padding: 25px 35px;
+      max-width: 446px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3%;
+      display: none;
+  }
+
+  .signs-symptoms-details .card-symptoms img {
+      display: block;
+      margin: 0 auto 25px;
+  }
+
+  .signs-symptoms-details .card-symptoms__title {
+      color: #fff;
+      font-family: MontserratSemiBold, sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: .96px;
+      margin-bottom: 20px;
+  }
+
+  .signs-symptoms-details .card-symptoms__text {
+      color: #fff;
+      font-family: MontserratRegular, sans-serif;
+      font-size: 1rem;
+      letter-spacing: .96px;
+      position: relative;
+  }
+
+  .signs-symptoms-details .card-symptoms__list li {
+      color: #fff;
+      font-family: MontserratRegular, sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: .96px;
+      position: relative;
+      padding-left: 20px;
+  }
+
+  .signs-symptoms-details .card-symptoms__close {
+      background-color: rgba(255, 255, 255, .63);
+      -webkit-clip-path: circle();
+      clip-path: circle();
+      height: 36px;
+      width: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 15px;
+      transition: .3s ease-in-out;
+      cursor: pointer;
+  }
+
+  .signs-symptoms-details .card-symptoms__close img {
+      margin-top: 70%;
+      ;
+  }
+
+  @media (max-width: 768px) {
+      .signs-symptoms .signs-sides .side.left-side .eye {
+          margin: 24% 30% 0 0;
+      }
+
+      .signs-symptoms .signs-sides .side.left-side .anxiety {
+          margin: 15% 33% 0 0;
+      }
+
+      .signs-symptoms .signs-sides .side.left-side .sweat {
+          margin: 20% 60% 0 0;
+      }
+
+      .signs-symptoms .signs-sides .side.left-side .stomach {
+          margin: 20% 54% 0 0;
+      }
+
+      .signs-symptoms .signs-sides .side.left-side .pain {
+          margin: 15% 48% 0 0;
+      }
+
+      .signs-symptoms .signs-sides .side.left-side .knee {
+          margin: 70px 60px 0 0;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .symptoms {
+          padding-right: 0;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .symptoms {
+          padding: 0 20px 0 0;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .brain {
+          margin: 10px 0 0 15px;
+      }
+
+      .signs-symptoms .signs-sides .side .symptoms {
+          font-size: 0 !important;
+          line-height: 0;
+          padding: 0;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .symptoms {
+          padding-right: 0;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .ear {
+          margin: 20px 0 0 40px;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .symptoms {
+          padding-right: 0;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .lung {
+          margin: 40px 0 0 100px;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .kidneys {
+          margin: 30px 0 0 100px;
+      }
+
+      .signs-symptoms .signs-sides .side.right-side .skin {
+          margin: 30px 0 0 80px;
+      }
+
+      .signs-symptoms .signs-sides .side .symptoms span {
+          height: 35px;
+          width: 35px;
+      }
+
+      .signs-symptoms .signs-sides .side .symptoms span {
+          margin-left: 0;
+          margin-right: 0;
+
+      }
+
+      .signs-symptoms .symptoms-title {
+          width: 100%;
+          padding: 8px 50px 8px 100px;
+      }
+  }
