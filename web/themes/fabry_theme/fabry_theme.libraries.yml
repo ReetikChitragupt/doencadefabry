@@ -2,10 +2,18 @@ global:
   css:
     theme:
       css/style.css: {}
+      css/symptom-screener.css: {}
+      css/typing-indicator.css: {}
   js:
     js/slider.js: {}
+    js/symptom-screener-globals.js: {} 
+    js/symptom-screener.js: {}
+    js/symptom-screener-result.js: {}
+    https://code.jquery.com/jquery-3.6.0.min.js: { type: external }
+
   dependencies:
     - core/drupal
+    - core/jquery
 
 fontawesome:
   version: 6.x

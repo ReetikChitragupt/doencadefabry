@@ -38,6 +38,14 @@ fabry_theme.manisfestation:
   requirements:
     _permission: 'access content' 
 
+fabry_theme.knowyoursymptoms:
+  path: '/knowyoursymptoms'
+  defaults:
+    _controller: '\Drupal\fabry_theme\Controller\PagesController::knowyoursymptoms'
+    _title: 'SubPage'
+  requirements:
+    _permission: 'access content' 
+
 fabry_theme.orgaos:
   path: '/orgaos'
   defaults:

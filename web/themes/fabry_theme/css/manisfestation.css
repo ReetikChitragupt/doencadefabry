@@ -393,3 +393,98 @@
           padding: 8px 50px 8px 100px;
       }
   }
+
+  .fabry-header-row {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+  }
+
+  .header-left,
+  .header-right {
+      background-color: #e73452;
+      /* Deep red */
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+      .fabry-header-row {
+          grid-template-columns: 1fr;
+      }
+      .fabry-age-symptoms {
+        padding: 0.1rem !important;
+      }
+      .content-sub-section-custom{
+        width: 100% !important;
+      }
+  }
+.page-default .content-text__paragraph {
+        font-size: 1.6rem;
+        line-height: 3rem;
+    }
+    .page-default .content-text__paragraph:last-child, .page-default .sub-title--nMargin, .page-default h2--nMargin {
+    margin-bottom: 0;
+}
+
+  .fabry-age-symptoms {
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+  }
+
+  .section-header {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #ccc;
+  }
+
+  .symptom-block {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 1.5rem;
+      /* Adds the gap between blue and white sections */
+      margin-bottom: 2rem;
+  }
+
+  .left {
+      background-color: #fff;
+      padding: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .right {
+      background-color: #fff;
+      padding: 1.5rem;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .right ul {
+      margin: 0;
+      padding-left: 1.2rem;
+  }
+
+  .right li {
+      color: #575756;
+      font-size: .8rem;
+      margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+      .symptom-block {
+          grid-template-columns: 1fr;
+      }
+
+      .left {
+          margin-bottom: 1rem;
+      }
+  }

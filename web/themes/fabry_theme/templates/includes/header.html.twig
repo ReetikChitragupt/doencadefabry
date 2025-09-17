@@ -3,6 +3,10 @@
 		<span>EXCLUSIVE PLATFORM</span>
 		FOR HEALTH PROFESSIONALS</p>
 </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script src="themes/fabry_theme/js/symptom-screener-globals.js"></script>
+<script src="themes/fabry_theme/js/symptom-screener.js"></script>
 <header class="header-wrap" role="banner">
 	<div
 		class="header-inner">
@@ -42,10 +46,10 @@
 							<a href="/orgaos">{{ 'Órgãos'|t }}</a>
 						</li>
 						<li>
-							<a href="#">{{ 'The importance of knowing your symptoms'|t }}</a>
+							<a href="/knowyoursymptoms">{{ 'A importância de conhecer seus sintomas'|t }}</a>
 						</li>
 						<li>
-							<a href="#">{{ 'Symptom Matcher'|t }}</a>
+							<a href="#" onclick="launchScreener(event);">{{ 'Symptom Matchers'|t }}</a>
 						</li>
 					</ul>
 				</li>
@@ -76,7 +80,7 @@
 				href="#" class="digital-magazine">
 				<!-- Include Font Awesome for the magnifying glass icon -->
 
-				<div class="symptom-matcher-button sm-btn-title">
+				<div class="symptom-matcher-button sm-btn-title" onclick="launchScreener(event);">
 					<img src="{{ directory }}/images/sm-img.png" alt="sm-img">
 				</div>
 
@@ -107,9 +111,6 @@
 					<li>
 						<a href="/prevalence">{{ 'PREVALÊNCIA DA DOENÇA DE FABRY'|t }}</a>
 					</li>
-					<li>
-						<a href="#">Symptom Matcher</a>
-					</li>
 				</ul>
 			</li>
 			<li class="has-dropdown">
@@ -122,7 +123,7 @@
 						<a href="/orgaos">Órgãos</a>
 					</li>
 					<li>
-						<a href="#">Importance of knowing symptoms</a>
+						<a href="/knowyoursymptoms">A importância de conhecer seus sintomas</a>
 					</li>
 					<li>
 						<a href="#">Symptom Matcher</a>
@@ -156,3 +157,1024 @@
 		</a>
 	</nav>
 </header>
+
+<div id="symptom-screener-overlay" class="hidden">
+	<div id="symptom-screener-container">
+		<div id="symptom-screener-rehydration-prompt" class="hidden">
+			<p>
+				It appears you have previously started a session with the
+				            SymptomMatcher. Would you like to resume your last session?
+			</p>
+			<button class="symptom-screener-button" v-on:click="rehydrateSession(true)">
+				Yes
+			</button>
+			<button class="symptom-screener-button-null" v-on:click="rehydrateSession(false)">
+				No
+			</button>
+		</div>
+
+		<div id="symptom-screener-header-container">
+			<div id="symptom-screener-header">
+				<div>
+					<button id="symptom-screener-container-close" class="symptom-screener-button" onclick="closeScreener(event);">
+						Close
+					</button>
+				</div>
+				<h2 id="symptom-screener-title" style="display: inline-block; font-size:1.5rem;font-weight:400;color:#333">
+					SymptomMatcher
+				</h2>
+			</div>
+		</div>
+
+		<div id="symptom-screener-dialogue">
+			<div id="symptom-screener-dialogue-item-1" class="symptom-screener-dialogue-item">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<p id="symptom-screener-q1-prompt">{{'{{ q1prompt }}'}}</p>
+					</div>
+					<div id="symptom-screener-q1-options" class="symptom-screener-dialogue-options" style="display: block">
+						<ul class="symptom-screener-dialogue-option-container-2w">
+							<a id="symptom-screener-option-1-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion1('SELF')">
+								<li>Yourself</li>
+							</a>
+							<a id="symptom-screener-option-1-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion1('OTHER')">
+								<li>Someone else</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-2" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q2-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<p id="symptom-screener-q2-prompt" class="hidden">
+							{{'{{ q2prompt }}'}}
+						</p>
+					</div>
+					<div id="symptom-screener-q2-options" class="symptom-screener-dialogue-options">
+						<ul class="symptom-screener-dialogue-option-container-2w">
+							<a id="symptom-screener-option-2-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion2('MALE')">
+								<li>Male</li>
+							</a>
+							<a id="symptom-screener-option-2-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion2('FEMALE')">
+								<li>Female</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-3" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q3-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<p id="symptom-screener-q3-prompt" class="hidden">
+							{{'{{ q3prompt }}'}}
+						</p>
+					</div>
+					<div id="symptom-screener-q3-options" class="symptom-screener-dialogue-options">
+						<div>
+							<input id="symptom-screener-dialogue-item-3-age" style="
+								                      height: 2em;
+								                      border-radius: 5px;
+								                      border: 2px solid #c0c0c0;
+								                    " type="text" name="age"/>
+							<span style="margin-left: 5px"><input type="radio" name="age-type" value="months"/>&nbsp;Months</span>
+							<span style="margin-left: 5px; margin-right: 5px"><input type="radio" name="age-type" value="years" checked/>&nbsp;Years</span>
+							<button style="margin-top: 10px" class="symptom-screener-button" type="button" v-on:click="processQuestion3">
+								Submit
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-4" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q4-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<p id="symptom-screener-q4-prompt" class="hidden">
+							{{'{{ q4prompt }}'}}
+						</p>
+					</div>
+					<div id="symptom-screener-q4-options" class="symptom-screener-dialogue-options">
+						<div style="margin-top: -40px">
+							<div class="symptom-screener-dialogue-subprompt">
+								<p>a. Fabry disease</p>
+							</div>
+							<ul class="symptom-screener-dialogue-option-container-3w">
+								<a id="symptom-screener-option-4-1-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('YES', 1)">
+									<li>Yes</li>
+								</a>
+								<a id="symptom-screener-option-4-1-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('NO', 1)">
+									<li>No</li>
+								</a>
+								<a id="symptom-screener-option-4-1-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('DONT_KNOW', 1)">
+									<li>Don&#39;t Know</li>
+								</a>
+							</ul>
+						</div>
+						<div>
+							<div class="symptom-screener-dialogue-subprompt">
+								<p>
+									b. Kidneys do not work as well as they should (renal
+									                      failure) when they were under 50 years old
+								</p>
+							</div>
+							<ul class="symptom-screener-dialogue-option-container-3w">
+								<a id="symptom-screener-option-4-2-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('YES', 2)">
+									<li>Yes</li>
+								</a>
+								<a id="symptom-screener-option-4-2-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('NO', 2)">
+									<li>No</li>
+								</a>
+								<a id="symptom-screener-option-4-2-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('DONT_KNOW', 2)">
+									<li>Don&#39;t Know</li>
+								</a>
+							</ul>
+						</div>
+						<div>
+							<div class="symptom-screener-dialogue-subprompt">
+								<p>
+									c. Bottom left part (Left ventricle) of the heart is too
+									                      big (left ventricular hypertrophy) - when they were under
+									                      50 years old
+								</p>
+							</div>
+							<ul class="symptom-screener-dialogue-option-container-3w">
+								<a id="symptom-screener-option-4-3-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('YES', 3)">
+									<li>Yes</li>
+								</a>
+								<a id="symptom-screener-option-4-3-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('NO', 3)">
+									<li>No</li>
+								</a>
+								<a id="symptom-screener-option-4-3-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('DONT_KNOW', 3)">
+									<li>Don&#39;t Know</li>
+								</a>
+							</ul>
+						</div>
+						<div>
+							<div class="symptom-screener-dialogue-subprompt">
+								<p>
+									d. Heart muscle is too big (hypertrophic cardiomyopathy) -
+									                      when they were less than 50 years old
+								</p>
+							</div>
+							<ul class="symptom-screener-dialogue-option-container-3w">
+								<a id="symptom-screener-option-4-4-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('YES', 4)">
+									<li>Yes</li>
+								</a>
+								<a id="symptom-screener-option-4-4-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('NO', 4)">
+									<li>No</li>
+								</a>
+								<a id="symptom-screener-option-4-4-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('DONT_KNOW', 4)">
+									<li>Don&#39;t Know</li>
+								</a>
+							</ul>
+						</div>
+						<div>
+							<div class="symptom-screener-dialogue-subprompt">
+								<p>e. A positive newborn screening test for Fabry</p>
+							</div>
+							<ul class="symptom-screener-dialogue-option-container-3w">
+								<a id="symptom-screener-option-4-5-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('YES', 5)">
+									<li>Yes</li>
+								</a>
+								<a id="symptom-screener-option-4-5-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('NO', 5)">
+									<li>No</li>
+								</a>
+								<a id="symptom-screener-option-4-5-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion4('DONT_KNOW', 5)">
+									<li>Don&#39;t Know</li>
+								</a>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-5" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q5-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<p id="symptom-screener-q5-prompt" class="hidden">
+							{{'{{ q5prompt }}'}}
+						</p>
+					</div>
+					<div id="symptom-screener-q5-options" class="symptom-screener-dialogue-options">
+						<ul v-bind:class="{ 'symptom-screener-dialogue-option-container-4w-collapsible-1w-md': !isChild, 'symptom-screener-dialogue-option-container-2w': isChild }">
+							<a id="symptom-screener-option-5-1" href="javascript:void(0)" v-on:click="processQuestion5('A', 'symptom-screener-option-5-1')" class="symptom-screener-dialogue-item-option" v-show="!isChild" ref="5A">
+								<li>
+									A bottom left side of the heart that is too big (left
+									                      ventricular hypertrophy)
+								</li>
+							</a>
+							<a id="symptom-screener-option-5-2" class="symptom-screener-dialogue-item-option" v-show="!isChild" href="javascript:void(0)" v-on:click="processQuestion5('B', 'symptom-screener-option-5-2')" ref="5B">
+								<li>Fabry disease</li>
+							</a>
+							<a id="symptom-screener-option-5-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion5('C', 'symptom-screener-option-5-3')" v-show="!isChild" ref="5C">
+								<li>A positive test for Fabry as a newborn baby</li>
+							</a>
+							<a id="symptom-screener-option-5-4" class="symptom-screener-dialogue-item-option" v-show="!isChild" href="javascript:void(0)" v-on:click="processQuestion5('D', 'symptom-screener-option-5-4')" ref="5D">
+								<li>
+									A heart biopsy that found stored material in your heart
+									                      muscle
+								</li>
+							</a>
+							<a id="symptom-screener-option-5-5" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion5('E', 'symptom-screener-option-5-5')" ref="5E">
+								<li>Elevated protein in urine</li>
+							</a>
+							<a id="symptom-screener-option-5-6" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion5('F', 'symptom-screener-option-5-6')" ref="5F">
+								<li>Heart rate is too slow (bradycardia)</li>
+							</a>
+							<a id="symptom-screener-option-5-7" class="symptom-screener-dialogue-item-option" v-show="!isChild" href="javascript:void(0)" v-on:click="processQuestion5('G', 'symptom-screener-option-5-7')" ref="5G">
+								<li>
+									Kidneys don't work as well as they should (renal failure)
+									                      - when you were under 50 years old
+								</li>
+							</a>
+							<a id="symptom-screener-option-5-8" class="symptom-screener-dialogue-item-option" v-show="!isChild" href="javascript:void(0)" v-on:click="processQuestion5('H', 'symptom-screener-option-5-8')" ref="5H">
+								<li>
+									Whorl pattern found in the cornea on eye exam (corneal
+									                      whorl or verticillata)
+								</li>
+							</a>
+						</ul>
+						<div id="symptom-screener-proceed-from-q5-button" style="text-align: center; margin-top: 40px">
+							<button class="symptom-screener-button" type="button" v-on:click="proceedFromQuestion5()">
+								I am done selecting symptoms
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-6" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q6-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<p id="symptom-screener-q6-prompt" class="hidden">
+							{{'{{ q6prompt }}'}}
+						</p>
+					</div>
+					<div id="symptom-screener-q6-options" class="symptom-screener-dialogue-options">
+						<ul class="symptom-screener-dialogue-option-container-3w-collapsible-1w-md">
+							<a id="symptom-screener-option-6-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion6('A', 'symptom-screener-option-6-1')" ref="6A">
+								<li>Decreased to no sweating</li>
+							</a>
+							<a id="symptom-screener-option-6-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion6('B', 'symptom-screener-option-6-2')" ref="6B">
+								<li>Burning pain or tingling in hands or feet</li>
+							</a>
+							<a id="symptom-screener-option-6-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion6('C', 'symptom-screener-option-6-3')" ref="6C">
+								<li>
+									Severe whole body pain crises with fever or overexertion
+								</li>
+							</a>
+							<a id="symptom-screener-option-6-4" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion6('D', 'symptom-screener-option-6-4')" ref="6D">
+								<li>Heat intolerance</li>
+							</a>
+							<a id="symptom-screener-option-6-5" class="symptom-screener-dialogue-item-option" v-show="!isChild" href="javascript:void(0)" v-on:click="processQuestion6('E', 'symptom-screener-option-6-5')" ref="6E">
+								<li>
+									Stroke (or mini-stroke) when you were under 50 years old
+								</li>
+							</a>
+						</ul>
+
+						<div id="symptom-screener-proceed-from-q6-button" style="text-align: center; margin-top: 40px">
+							<button class="symptom-screener-button" type="button" v-on:click="proceedFromQuestion6()">
+								I am done selecting symptoms
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="submit-screening-p1-results" class="hidden" style="text-align: center; margin-top: 20px">
+				<button class="symptom-screener-button symptom-screener-submit-button" v-on:click="submitScreeningPhase1Results">
+					Submit
+				</button>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-8" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q8-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<p id="symptom-screener-q8-prompt" class="hidden">
+							{{'{{ q8prompt }}'}}
+						</p>
+					</div>
+					<div id="symptom-screener-q8-options" class="symptom-screener-dialogue-options">
+						<div class="symptom-screener-paginated-container">
+							<ul id="symptom-screener-dialogue-item-8-page1" class="symptom-screener-dialogue-option-container-3w-collapsible-1w-md">
+								<a id="symptom-screener-option-8-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('A', 'symptom-screener-option-8-1')" ref="8A">
+									<li>
+										Heartbeat doesn't feel right (fluttery, too fast, pounds
+										                        or skips a beat) (Heart conduction abnormalities)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('B', 'symptom-screener-option-8-2')" ref="8B">
+									<li>
+										Heart beats too fast or too slow (heart rhythm problems)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('C', 'symptom-screener-option-8-3')" ref="8C">
+									<li>Chest pain</li>
+								</a>
+
+								<a id="symptom-screener-option-8-4" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('D', 'symptom-screener-option-8-4')" ref="8D">
+									<li>
+										Leaking heart valve (cardiac valve regurgitation)
+									</li>
+								</a>
+
+								<a v-show="!isChild" id="symptom-screener-option-8-5" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('E', 'symptom-screener-option-8-5')" ref="8E">
+									<li>
+										Narrowed heart arteries (ischemic heart disease)
+									</li>
+								</a>
+
+								<a v-show="!isChild" id="symptom-screener-option-8-6" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('F', 'symptom-screener-option-8-6')" ref="8F">
+									<li>
+										Tests show the heart muscle is becoming too thick and
+										                        stiff (hypertrophic cardiomyopathy)
+									</li>
+								</a>
+
+								<a v-show="isChild" id="symptom-screener-option-8-7" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('G', 'symptom-screener-option-8-7')" ref="8G">
+									<li>Feeling tired all the time (fatigue)</li>
+								</a>
+							</ul>
+							<ul id="symptom-screener-dialogue-item-8-page2" class="symptom-screener-dialogue-option-container-3w-collapsible-1w-md hidden">
+								<a v-show="!isChild" id="symptom-screener-option-8-8" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('H', 'symptom-screener-option-8-8')" ref="8H">
+									<li>Mini-stroke (TIA)</li>
+								</a>
+
+								<a v-show="!isChild" id="symptom-screener-option-8-9" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('I', 'symptom-screener-option-8-9')" ref="8I">
+									<li>
+										Temporary partial vision loss, blind spots, zig-zag
+										                        lines or seeing stars (visual migraines)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-10" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('J', 'symptom-screener-option-8-10')" ref="8J">
+									<li>Dizziness (vertigo)</li>
+								</a>
+
+								<a id="symptom-screener-option-8-11" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('K', 'symptom-screener-option-8-11')" ref="8K">
+									<li>Fainting spells (syncope)</li>
+								</a>
+
+								<a id="symptom-screener-option-8-12" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('L', 'symptom-screener-option-8-12')" ref="8L">
+									<li>
+										Kidneys are not working properly (renal disease)
+									</li>
+								</a>
+
+								<a v-show="!isChild" id="symptom-screener-option-8-13" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('M', 'symptom-screener-option-8-13')" ref="8M">
+									<li>
+										Decreased GFR blood test (type of kidney value)
+									</li>
+								</a>
+
+								<a v-show="isChild" id="symptom-screener-option-8-14" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('N', 'symptom-screener-option-8-14')" ref="8N">
+									<li>
+										Elevated GFR blood test (a kidney function test)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-15" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('O', 'symptom-screener-option-8-15')" ref="8O">
+									<li>Elevated serum creatinine blood test</li>
+								</a>
+
+								<a id="symptom-screener-option-8-16" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('P', 'symptom-screener-option-8-16')" ref="8P">
+									<li>Chronic diarrhea</li>
+								</a>
+
+								<a id="symptom-screener-option-8-17" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('Q', 'symptom-screener-option-8-17')" ref="8Q">
+									<li>Abdominal pain</li>
+								</a>
+
+								<a id="symptom-screener-option-8-18" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('R', 'symptom-screener-option-8-18')" ref="8R">
+									<li>Constipation</li>
+								</a>
+
+								<a id="symptom-screener-option-8-19" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('S', 'symptom-screener-option-8-19')" ref="8S">
+									<li>Diarrhea with alternating constipation</li>
+								</a>
+
+								<a id="symptom-screener-option-8-20" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('T', 'symptom-screener-option-8-20')" ref="8T">
+									<li>Bloating</li>
+								</a>
+							</ul>
+							<ul id="symptom-screener-dialogue-item-8-page3" class="symptom-screener-dialogue-option-container-3w-collapsible-1w-md hidden">
+								<a id="symptom-screener-option-8-21" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('U', 'symptom-screener-option-8-21')" ref="8U">
+									<li>Depression</li>
+								</a>
+
+								<a id="symptom-screener-option-8-22" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('V', 'symptom-screener-option-8-22')" ref="8V">
+									<li>Panic Attacks</li>
+								</a>
+
+								<a id="symptom-screener-option-8-23" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('W', 'symptom-screener-option-8-23')" ref="8W">
+									<li>Anxiety</li>
+								</a>
+
+								<a id="symptom-screener-option-8-24" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('X', 'symptom-screener-option-8-24')" ref="8X">
+									<li>Ringing in the ears (tinnitus)</li>
+								</a>
+
+								<a v-show="!isChild" id="symptom-screener-option-8-25" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('Y', 'symptom-screener-option-8-25')" ref="8Y">
+									<li>Hearing loss</li>
+								</a>
+
+								<a v-show="!isChild" id="symptom-screener-option-8-26" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('Z', 'symptom-screener-option-8-26')" ref="8Z">
+									<li>
+										Red dots or non-itchy rash on lower belly
+										                        (angiokeratoma)
+									</li>
+								</a>
+							</ul>
+							<ul id="symptom-screener-dialogue-item-8-page4" class="symptom-screener-dialogue-option-container-3w-collapsible-1w-md hidden">
+								<a v-show="!isChild" id="symptom-screener-option-8-27" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('AA', 'symptom-screener-option-8-27')" ref="8AA">
+									<li>Fatigue (feeling exhausted or tired)</li>
+								</a>
+
+								<a id="symptom-screener-option-8-28" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('BB', 'symptom-screener-option-8-28')" ref="8BB">
+									<li>
+										Exercise causes burning pain or overheating (exercise
+										                        intolerance)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-29" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('CC', 'symptom-screener-option-8-29')" ref="8CC">
+									<li>
+										Extremely sensitive to cold (cold intolerance)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-30" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('DD', 'symptom-screener-option-8-30')" ref="8DD">
+									<li>
+										Fingers and toes turn white and blue when cold (Raynaud
+										                        phenomenon)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-31" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('EE', 'symptom-screener-option-8-31')" ref="8EE">
+									<li>
+										Swelling in the hands or feet from extra fluid (edema in
+										                        extremities)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-32" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('FF', 'symptom-screener-option-8-32')" ref="8FF">
+									<li>
+										Numbness or tingling in hands and feet (neuropathy)
+									</li>
+								</a>
+
+								<a id="symptom-screener-option-8-33" class="symptom-screener-dialogue-item-option" href="javascript:void(0)" v-on:click="processQuestion8('GG', 'symptom-screener-option-8-33')" ref="8GG">
+									<li>
+										Erection of the penis that lasts longer than 4 hours
+										                        without medication (priapism)
+									</li>
+								</a>
+							</ul>
+						</div>
+						<div id="symptom-screener-q8-footer" class="symptom-screener-paginated-container-footer">
+							<ul>
+								<li id="symptom-screener-q8-paginator-p1" class="symptom-screener-paginated-container-footer-active">
+									<a href="javascript:void(0)" v-on:click="paginateQuestion8(1)">1</a>
+								</li>
+								<li id="symptom-screener-q8-paginator-p2">
+									<a href="javascript:void(0)" v-on:click="paginateQuestion8(2)">2</a>
+								</li>
+								<li id="symptom-screener-q8-paginator-p3">
+									<a href="javascript:void(0)" v-on:click="paginateQuestion8(3)">3</a>
+								</li>
+								<li id="symptom-screener-q8-paginator-p4">
+									<a href="javascript:void(0)" v-on:click="paginateQuestion8(4)">4</a>
+								</li>
+							</ul>
+						</div>
+						<div id="symptom-screener-proceed-from-q8" style="text-align: center; margin-top: 20px">
+							<button id="symptom-screener-q8-previous-button" type="button" class="symptom-screener-button" v-on:click="previousPageQuestion8()" style="margin-right: 5px">
+								Previous
+							</button>
+							<button id="symptom-screener-proceed-from-q8-button" class="symptom-screener-button" type="button" v-on:click="proceedFromQuestion8()">
+								Next
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="submit-screening-p2-results" class="hidden" style="text-align: center; margin-top: 20px">
+				<button class="symptom-screener-button symptom-screener-submit-button" v-on:click="submitScreeningPhase2Results">
+					Submit
+				</button>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-9" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q9-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div id="symptom-screener-q9-prompt" class="hidden">
+							<p>{{'{{ q9prompt }}'}}</p>
+							<div id="symptom-screener-classic-male" class="hidden" ref="9A">
+								<table class="symptom-screener-stories-table">
+									<thead>
+										<th colspan="2">Patient Experience 1</th>
+									</thead>
+									<tbody>
+										<tr></tr>
+										<tr v-if="question3.value > 3 && question3.value <= 5">
+											<td>
+												<b>Preschool</b>
+											</td>
+											<td>
+												He loves preschool and is making friends. He gets a
+												                            really bad pain in his hands and feet once in a
+												                            while. It's hard for him to describe it, but when it
+												                            happens it's really hard to help him. It doesn't
+												                            seem like normal aches and pains that kids get when
+												                            they grow. Once in a while, he'll get really sick at
+												                            preschool after time running around outside. He'll
+												                            even throw up, and I wonder if he has a stomach bug.
+												                            He's always the boy running around without bundling
+												                            up, even in winter. His doctor thinks he doesn't
+												                            sweat like other kids, so he doesn't stay cool like
+												                            usual.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 5 && question3.value <= 8">
+											<td>
+												<b>Early childhood</b>
+											</td>
+											<td>
+												School is going great and his teachers love having
+												                            him in class. The pain in his hands and feet comes
+												                            once in a while, and now he says it's like they're
+												                            on fire. He's got tummy pain too. His stomach is
+												                            tricky, because he'll be constipated and then have
+												                            diarrhea. Then he'll get attacks of throwing up.
+												                            It's like a stomach bug that doesn't go away. He has
+												                            to miss a bit of school, and then he gets really
+												                            wiped out. The other day I noticed a dark mark,
+												                            almost black, below his belly button. I'm surprised
+												                            I didn't see it before because he rarely has a shirt
+												                            on at home. He overheats really easily and doesn't
+												                            sweat to cool down like everyone else.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 8 && question3.value <= 12">
+											<td>
+												<b>Late childhood</b>
+											</td>
+											<td>
+												Growing up has been tough for him because of the
+												                            terrible burning pain in his hands and feet. He says
+												                            it's like being poked with nails. Now he gets
+												                            headaches a lot, too. He wants to be like all his
+												                            friends but the pain, difficulty sweating and always
+												                            being tired doesn't help matters. The heat
+												                            intolerance was tough to explain to the gym teacher,
+												                            and then how sick he gets after exercise. The
+												                            diarrhea is also really bad and his belly keeps
+												                            hurting, especially after eating. So he doesn't eat
+												                            much. Then these dark-red bumps started showing up
+												                            on his skin, around where his swim trunks go. It's
+												                            hard for him. The doctor wants to send him to get
+												                            his stomach and eyes checked out.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 12 && question3.value <= 19">
+											<td>
+												<b>Teenager</b>
+											</td>
+											<td>
+												It's tough not being able to keep up with the other
+												                            guys. The pain in my hands and legs and my headaches
+												                            are too intense sometimes. I love watching sports,
+												                            but if I exercise I feel really sick afterwards.
+												                            I'll throw up and feel awful. And my stomach is
+												                            upset a lot, with pain or throwing up or I'm running
+												                            to the bathroom with diarrhea. It's so embarrassing
+												                            at school, and all I want to do is bulk up. But I
+												                            don't feel like eating. Only my good friends get it.
+												                            I've got these dark-red bumps around where my swim
+												                            trunks go, which is awful in the locker room.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 19 && question3.value <= 25">
+											<td>
+												<b>Young adult</b>
+											</td>
+											<td>
+												Pain is a regular thing for me -- in my hands, feet,
+												                            stomach. I'm really glad my boss is so understanding
+												                            at work. I feel tired all the time and depressed. I
+												                            don't feel like eating because I'll probably end up
+												                            with constipation or diarrhea. I think I need to get
+												                            my hearing checked, because my wife is telling me to
+												                            turn down the TV more and more. Sometimes I really
+												                            need it louder, especially when I get this buzzing
+												                            sound in my ears that won't go away. My urine is
+												                            really foamy when I pee into the toilet. I would say
+												                            my health is pretty poor.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 25">
+											<td>
+												<b>Adult</b>
+											</td>
+											<td>
+												Work is going well, but it's hard to manage taking
+												                            time off for my severe fatigue, pain, bad stomach,
+												                            and other medical problems. I have protein in my
+												                            urine and my kidney function is worsening. I noticed
+												                            that my heartbeat was racing and have even passed
+												                            out at home. My doctor sent me to get my heart
+												                            checked. The heart doctor said my heart is slowly
+												                            getting bigger and weaker, and wants to check it
+												                            once in a while. My ankles and feet get so swollen I
+												                            wear sandals a lot. I really want to keep working
+												                            because I feel too young to be this unhealthy. I'm
+												                            so glad my family understands.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="symptom-screener-classic-female" class="hidden" ref="9B">
+								<table class="symptom-screener-stories-table">
+									<thead>
+										<th colspan="2">Patient Experience 1</th>
+									</thead>
+									<tbody>
+										<tr></tr>
+										<tr v-if="question3.value > 5 && question3.value <= 8">
+											<td>
+												<b>Early childhood</b>
+											</td>
+											<td>
+												I never noticed anything until now, but she has pain
+												                            and tingling in her feet once in a while. Sometimes
+												                            it's in her hands. It comes and goes and doesn't
+												                            stop her from what she needs to do in school. She's
+												                            a busy bee and her teachers love her.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 8 && question3.value <= 12">
+											<td>
+												<b>Late childhood</b>
+											</td>
+											<td>
+												Her fingers have a pins-and-needles feeling once in
+												                            a while, just like a few years ago. Now she tells us
+												                            more about pain in her hands and feet too. Sometimes
+												                            it's like a burning pain. It's usually random, not
+												                            when she's had an intense basketball practice or
+												                            something. Sometimes it hits her when she's sick or
+												                            when it's super hot out -- she seems a little
+												                            sensitive to the heat. We can't figure it out, but
+												                            we mentioned it to the doctor. She also seems to be
+												                            more tired than usual and she hates that. And she
+												                            sure gets a lot of headaches for a young girl.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 12 && question3.value <= 19">
+											<td>
+												<b>Teenager</b>
+											</td>
+											<td>
+												I love playing basketball, but I dread how I feel
+												                            after practices and games. I feel great when we're
+												                            playing, until the burning in my feet starts. I try
+												                            to play through it, but after I am just wiped out.
+												                            Sometimes I have really bad stomach pain and can't
+												                            poop, other times I'll have diarrhea. Hot weather
+												                            seems to bother me more and more, I just can't stay
+												                            cool. Sometimes I feel dizzy and have to sit down.
+												                            Classes at school are going great, though, and I
+												                            can't wait to graduate from high school. I'm excited
+												                            but nervous when I think about college.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 19 && question3.value <= 25">
+											<td>
+												<b>Young adult</b>
+											</td>
+											<td>
+												I'm pretty healthy, but there are little things
+												                            bother me. I hate going outside in the hot because I
+												                            can't stand the heat. It wipes me out and I start to
+												                            feel sick. Pain in my hands and feet still hits me,
+												                            and more when I'm sick or overheated. I had to give
+												                            up sports because I feel so sick after exercising. I
+												                            still try to do some light exercise when I can. Work
+												                            is going great and I don't have a physical job, so
+												                            that's good. Once in a while I have to take a sick
+												                            day because of migraines or stomach pain, which
+												                            sometimes comes with constipation and diarrhea. It
+												                            feels like a stomach flu but it's not.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 25">
+											<td>
+												<b>Adult</b>
+											</td>
+											<td>
+												Work is going well. Thankfully we have a good plan
+												                            for sick days and my boss is understanding, because
+												                            I have to stay home once in a while. I'll get hit
+												                            with burning pain in my hands and feet, or my
+												                            stomach. Some days it's that I have to run to the
+												                            bathroom a bit for diarrhea or constipation, which
+												                            wipes me right out. Other days it's migraines. I'm
+												                            always the one turning down the thermostat in the
+												                            office because I can't stand the heat. Lately I've
+												                            been having a buzzing in my ear. My doctor wants me
+												                            to get some heart and kidney tests. I've been having
+												                            dizzy spells and feel like my heart is beating too
+												                            fast or too slowly.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="symptom-screener-late-onset-male" class="hidden" ref="9C">
+								<table class="symptom-screener-stories-table">
+									<thead>
+										<th colspan="2">Patient Experience 2</th>
+									</thead>
+									<tbody>
+										<tr></tr>
+										<tr v-if="question3.value > 19 && question3.value <= 25">
+											<td>
+												<b>Young adult</b>
+											</td>
+											<td>
+												I haven't noticed anything until now, but I guess a
+												                            few things bother me about my health. Luckily, I've
+												                            always been thin and actually have trouble putting
+												                            on weight. It drives other people crazy because they
+												                            have the opposite problem. Lately I've noticed that
+												                            sometimes I feel like my heart is racing.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 25">
+											<td>
+												<b>Adult</b>
+											</td>
+											<td>
+												My heartbeat races often and it's starting to
+												                            concern me now. I mentioned it to my doctor, who
+												                            sent me for some heart tests. They told me that my
+												                            heart is bigger than it should be, and it is going
+												                            to get bigger and weaker over time. I might need
+												                            heart surgery at some point. I was so shocked
+												                            because I feel like I'm too young to have heart
+												                            disease. I've noticed that my hands and feet are a
+												                            little puffy sometimes, so I like to rest with my
+												                            feet up watching TV even more now. The heart doctor
+												                            wants to check on my heart once in a while and see
+												                            if it's still pumping well. I'm glad that I can keep
+												                            my job and still work, because I need to support my
+												                            family.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="symptom-screener-tw-splice-male" class="hidden" ref="9D">
+								<table class="symptom-screener-stories-table">
+									<thead>
+										<th colspan="2">Patient Experience 3</th>
+									</thead>
+									<tbody>
+										<tr></tr>
+										<tr v-if="question3.value > 19 && question3.value <= 25">
+											<td>
+												<b>Young adult</b>
+											</td>
+											<td>
+												I have been healthy, but I worry sometimes about how
+												                            well my heart will work as I get older. When my mom
+												                            turned 40 she started having chest pain and felt
+												                            like her heart was beating too fast or too slow
+												                            sometimes. Her dad had the same problems and when he
+												                            was in his 50s the doctors told him his heart was
+												                            too big and wasn't working well. I wonder if that is
+												                            in my future too.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 25">
+											<td>
+												<b>Adult</b>
+											</td>
+											<td>
+												My heartbeat races often and it's starting to
+												                            concern me. I mentioned it to my doctor, who sent me
+												                            for some heart tests. They told me that my heart is
+												                            bigger than it should be, and it is going to get
+												                            bigger and weaker over time. I might need heart
+												                            surgery at some point. I was so shocked because I
+												                            feel like I'm too young to have heart disease. The
+												                            heart doctor wants to check on my heart once in a
+												                            while and see if it's still pumping well. I'm glad
+												                            that I can keep my job and still work, because I
+												                            need to support my family.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="symptom-screener-tw-splice-female" class="hidden" ref="9E">
+								<table class="symptom-screener-stories-table">
+									<thead>
+										<th colspan="2">Patient Experience 2</th>
+									</thead>
+									<tbody>
+										<tr></tr>
+										<tr v-if="question3.value > 19 && question3.value <= 25">
+											<td>
+												<b>Young adult</b>
+											</td>
+											<td>
+												I have been healthy and work hard at school and
+												                            home, I worry about my dad mostly. When he turned 40
+												                            he started having chest pain and felt like his heart
+												                            was beating too fast or too slow sometimes. It took
+												                            a long time for him to go to the doctor and they
+												                            weren't quite sure what was happening to him. His
+												                            mom had the same problems and when she was in her
+												                            50s the doctors told her that her heart had a big
+												                            lower left chamber and wasn't working well. I wonder
+												                            if that is in my future too.
+											</td>
+										</tr>
+										<tr v-if="question3.value > 25">
+											<td>
+												<b>Adult</b>
+											</td>
+											<td>
+												My heartbeat races often and it's starting to
+												                            concern me now. I mentioned it to my doctor, who
+												                            sent me for some heart tests. They told me that my
+												                            heart is bigger than it should be, and it is going
+												                            to get bigger and weaker over time. I might need
+												                            heart surgery at some point. I was so shocked
+												                            because I feel like I'm too young to have heart
+												                            disease. I've noticed that my hands and feet are a
+												                            little puffy sometimes, so I like to rest with my
+												                            feet up watching TV even more now. The heart doctor
+												                            wants to check on my heart once in a while and see
+												                            if it's still pumping well.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="symptom-screener-tw-splice-female-baby" class="hidden" ref="9F">
+								<table class="symptom-screener-stories-table">
+									<thead>
+										<th colspan="2">Patient Experience 3</th>
+									</thead>
+									<tbody>
+										<tr></tr>
+										<tr v-if="question3.value > 25">
+											<td>
+												<b>Adult</b>
+											</td>
+											<td>
+												Even though he is very healthy, my son had blood
+												                            taken from his heel in the hospital checking for
+												                            newborn problems. The doctor just told me that he
+												                            tested positive for Fabry disease. He also told me
+												                            that this is something we need to know for his
+												                            future. Then the doctor suggested that I should get
+												                            my heart evaluated by my doctor. I've always been
+												                            healthy so I don't think they'll find any problems.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div id="symptom-screener-q9-options" class="symptom-screener-dialogue-options">
+						<ul class="symptom-screener-dialogue-option-container-4w-collapsible-1w-lg">
+							<a id="symptom-screener-option-9-1" class="symptom-screener-dialogue-item-option" href="javascript:void(0);" v-on:click="processQuestion9('A')">
+								<li class="left-justify-content">
+									<b>Not At All Like</b>
+									<p>It doesn't sound like my situation at all.</p>
+								</li>
+							</a>
+							<a id="symptom-screener-option-9-2" class="symptom-screener-dialogue-item-option" href="javascript:void(0);" v-on:click="processQuestion9('B')">
+								<li class="left-justify-content">
+									<b>Not Much Like</b>
+									<p>
+										It sounds like it's not very similar to my situation.
+									</p>
+								</li>
+							</a>
+							<a id="symptom-screener-option-9-3" class="symptom-screener-dialogue-item-option" href="javascript:void(0);" v-on:click="processQuestion9('C')">
+								<li class="left-justify-content">
+									<b>Somewhat Like</b>
+									<p>
+										It sounds like it has some similarities to my situation.
+									</p>
+								</li>
+							</a>
+							<a id="symptom-screener-option-9-4" class="symptom-screener-dialogue-item-option" href="javascript:void(0);" v-on:click="processQuestion9('D')">
+								<li class="left-justify-content">
+									<b>A Lot Like</b>
+									<p>
+										It sounds very similar to or exactly like my situation.
+									</p>
+								</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="submit-stories-results" class="hidden" style="text-align: center; margin-top: 20px">
+				<button class="symptom-screener-button symptom-screener-submit-button" v-on:click="submitStoriesResults">
+					Submit
+				</button>
+			</div>
+
+			<div id="symptom-screener-dialogue-item-10" class="symptom-screener-dialogue-item hidden hidden-left">
+				<div class="symptom-screener-avatar"></div>
+				<div class="symptom-screener-dialogue-bubble">
+					<div class="symptom-screener-dialogue-prompt">
+						<div id="symptom-screener-q10-typing-indicator" class="typing-indicator">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<p id="symptom-screener-q10-prompt" class="hidden">
+							{{'{{ q10prompt }}'}}
+						</p>
+					</div>
+					<div id="symptom-screener-q10-options" class="symptom-screener-dialogue-options">
+						<div style="text-align: center">
+							<a href="javascript:void(0)" v-on:click="downloadTearSheet">Download</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="symptom-screener-footer">
+			<p>
+				NOTICES &amp; DISCLAIMERS: The Symptom Matcher does not constitute
+				            medical advice and is no substitute for consultation provided by
+				            medical professionals. The Symptom Matcher is offered solely for
+				            informational purposes for individuals seeking to learn more about
+				            Fabry disease and their personal risk exposure. Call your local
+				            emergency hotline if you are currently experiencing a medical
+				            emergency.
+			</p>
+		</div>
+	</div>
+</div>

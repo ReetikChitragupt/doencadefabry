@@ -45,6 +45,13 @@ class PagesController extends ControllerBase {
     ];
   }
 
+  public function knowyoursymptoms() {
+    return [
+      '#title' => Markup::create('knowyoursymptoms Page'),
+      '#theme' => 'page__knowyoursymptoms', // uses "pages/knowyoursymptoms.html.twig"
+    ];
+  }
+
   public function diagnosis() {
     return [
       '#title' => Markup::create('diagnosis Page'),
